@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-UK">
+<head>
+	<title>RoboCereal</title>
+</head>
 <body>
-
-<h1>My The cereal maker</h1>
-
-<p>yeeeaaaaaaa got myslelf some cereal</p>
-
+<h1 title="The worlds first automatic cereal dispeser">RoboCereal</h1>
+<br>
+<h2>Home Page</h2>
+<br>
+<p>I am so hungry right now</p>
+<br>
+<a href="https://en.wikipedia.org/wiki/Cereal"> Click here to learn more about how cereal contributes to a healthy, balanced diet.</a>
+<br>
+<img src="http://www.womenshealthmag.com/sites/womenshealthmag.com/files/images/toxic-cereal_0.jpg" alt="Cereal" width="142" height="142">
 </body>
 </html>
