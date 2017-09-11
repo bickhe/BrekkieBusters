@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-UK">
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+/>
 	<title>RoboCereal</title>
+
+
 </head>
 
 <body>
@@ -19,7 +25,14 @@
 		Last name:<br>
   		<input type="text" name="lastname">
 	</form> 
-
+	<br>
+	<h3 style="text-align:center;">Select your cereal</h3>
+	<select name="Types of Cereal" style="text-align:center;" style="text-align:center;">
+		<option value="cornflakes">Cornflakes</option>
+  		<option value="Alpen" >Alpen</option>
+  		<option value="Coco pops" >Coco pops</option>
+	</select>
+	<br>
 	<a href="https://en.wikipedia.org/wiki/Cereal"> Click here to learn more about how cereal contributes to a healthy, balanced diet.</a>
 	<br>
 	<img src="http://www.womenshealthmag.com/sites/womenshealthmag.com/files/images/toxic-cereal_0.jpg" alt="Cereal" width="142" height="142">
