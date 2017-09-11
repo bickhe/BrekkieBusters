@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-UK">
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<title>RoboCereal</title>
 </head>
 
@@ -11,6 +12,14 @@
 	<br>
 	<p style="text-align:center;">I am so hungry right now</p>
 	<br>
+
+	<form style="text-align:center;">
+  		First name:<br>
+ 		<input type="text" name="firstname"><br>
+		Last name:<br>
+  		<input type="text" name="lastname">
+	</form> 
+
 	<a href="https://en.wikipedia.org/wiki/Cereal"> Click here to learn more about how cereal contributes to a healthy, balanced diet.</a>
 	<br>
 	<img src="http://www.womenshealthmag.com/sites/womenshealthmag.com/files/images/toxic-cereal_0.jpg" alt="Cereal" width="142" height="142">
