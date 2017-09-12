@@ -12,7 +12,7 @@
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-	<!--Encased in the script tag below is the code for cookies :)-->
+	<!--Encased in the script tag below is the code for cookies. It asks a user for their name and should sotre it and great them next time, although hasnt been working that well for me. Copied it form W3schools-->
 <script>
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -62,26 +62,18 @@ function checkCookie() {
 		</div>
 		<div data-role="main" class="ui-content">
 			<br>
-			<h2 class="center">Home Page</h2>
+			<h2 class="center">RoboCereal</h2>
 			<br>
-			<p class="center">I am so hungry right now</p>
+			<p class="center">Making mornings faster</p>
 			<br>
-			<!--Form to input your name-->
-			<h3 class="center">Enter your details</h3>
-			<form class="center">
-	  			First name:<br>
-	 			<input type="text" name="firstname"><br>
-				Last name:<br>
-	  			<input type="text" name="lastname">
-			</form> 
+
+			<form>
+				<input type="button" value="Make cereal now" onclick="Settings.html">
+			</form>
 			<br>
-			<!--Drop down menu to select what type of cereal you have-->
-			<h3 class="center">Select your cereal</h3>
-			<select name="Types of Cereal" >
-				<option value="cornflakes">Cornflakes</option>
-	  			<option value="Alpen" >Alpen</option>
-	  			<option value="Coco pops" >Coco pops</option>
-			</select>
+			<input type="button" value="Settings" onclick="Settings.html">
+			<br>
+			<input type="button" value="Nutritional data" onclick="CerealData.html">
 			<br>
 			</div>
 		<div data-role="footer">
