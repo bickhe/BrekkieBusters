@@ -1,16 +1,58 @@
 <!DOCTYPE html>
+<!--Below we define the language-->
 <html lang="en-UK">
+
 <head>
+	<!--The next three tags are needed for Jquerry mobile to work-->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+	<!--Encased in the script tag below is the code for cookies :)-->
+<script>
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user = getCookie("username");
+    if (user != "") {
+        alert("Welcome again " + user);
+    } else {
+        user = prompt("Please enter your name:", "");
+        if (user != "" && user != null) {
+            setCookie("username", user, 365);
+        }
+    }
+}
+</script> 
+
+	<!-- Here is the title-->
 	<title>RoboCereal</title>
-
-
 </head>
 
-<body>
+
+	<!--Below is whre the bulk of the web page code is-->
+<body onload="checkCookie()">
 	<div data-role="page">
 		<div data-role="header">
 			<h1 title="The worlds first automatic cereal dispeser" style="text-align:center;">RoboCereal</h1>
@@ -21,6 +63,7 @@
 			<br>
 			<p style="text-align:center;">I am so hungry right now</p>
 			<br>
+			<!--Form to input your name-->
 			<h3 style="text-align:center;">Enter your details</h3>
 			<form style="text-align:center;">
 	  			First name:<br>
@@ -29,6 +72,7 @@
 	  			<input type="text" name="lastname">
 			</form> 
 			<br>
+			<!--Drop down menu to select what type of cereal you have-->
 			<h3 style="text-align:center;">Select your cereal</h3>
 			<select name="Types of Cereal" style="text-align:center;" style="text-align:center;">
 				<option value="cornflakes">Cornflakes</option>
