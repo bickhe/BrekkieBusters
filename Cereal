@@ -14,12 +14,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
-	<!-- Here is the title-->
-	<title>RoboCereal</title>
+<!-- Here is the title-->
+<title>RoboCereal</title>
 </head>
 
 
-	<!--Below is whre the bulk of the web page code is-->
+<!--HOME PAGE CODE-->
 <body >
 	<div data-role="page" id="home">
 		<div data-role="header">
@@ -29,28 +29,61 @@
 			<br>
 			<h2 class="center">RoboCereal</h2>
 			<br>
-			<p class="center">Making mornings faster</p>
+			<a href="#MakeCerealNow" data-role="button">Make Cereal now</a>
 			<br>
-
-			<a href="#Settings" data-role="button"> Settings</a>
+			<a href="#SetCerealTime" data-role="button">Set Cereal time</a>
 			<br>
-			</div>
+			<a href="#Settings" data-role="button">Settings</a>
+			<br>
 			<a href="#Nutrition" data-role="button">Nutrition Data</a>
 			<br>
+		</div>
 		<div data-role="footer">
 			<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
 		</div>
 	</div>
 
+
+<!--MAKE CEREAL NOW PAGE - in future this might not exist-->
+<div data-role="page" id="MakeCerealNow">
+	<div data-role="header">
+		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+	<p>RoboCereal better be working because I'm hungry!!</p>
+	</div>
+	<div data-role="footer">
+		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
+	</div>
+</div>
+
+
+
+<!--SET CEREAL TIME PAGE-->
+<div data-role="page" id="SetCerealTime">
+	<div data-role="header">
+		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+	<p>I want my cereal tomorrow at 6am please</p>
+	</div>
+	<div data-role="footer">
+		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
+	</div>
+</div>
+
+
+
 <!--SETTINGS PAGE-->
 <div data-role="page" id="Settings">
-<div data-role="header">
-</div>
-<div data-role="main" class="ui-content">
-brap brap
-</div>
-<div data-role="footer">
-			<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
+	<div data-role="header">
+		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+	<p>I want to set my name and my IP</p>
+	</div>
+	<div data-role="footer">
+		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
 		</div>
 </div>
 
@@ -58,13 +91,14 @@ brap brap
 
 <!--NUTRITION PAGE-->
 <div data-role="page" id="Nutrition">
-<div data-role="header">
-</div>
-<div data-role="main" class="ui-content">
-brap brap
-</div>
-<div data-role="footer">
-			<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
+	<div data-role="header">
+		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+	<p>I want to see detailed analytics about my cereal, calorie and nutrional consumption over the last few months</p>
+	</div>
+	<div data-role="footer">
+		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
 		</div>
 </div>
 
