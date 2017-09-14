@@ -51,6 +51,8 @@
 	</div>
 	<div data-role="main" class="ui-content">
 	<p>RoboCereal better be working because I'm hungry!!</p>
+	<a href="#home" data-role="button">Home</a>
+			<br>
 	</div>
 	<div data-role="footer">
 		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
@@ -66,6 +68,27 @@
 	</div>
 	<div data-role="main" class="ui-content">
 	<p>I want my cereal tomorrow at 6am please</p>
+
+		<h3 class="center">Select your cereal</h3>
+			<select name="Types of Cereal" >
+				<option value="Cornflakes">Cornflakes</option>
+	  			<option value="Alpen" >Alpen</option>
+	  			<option value="Cocopops" >Cocopops</option>
+			</select>
+
+		<h3 class="center">Select how much milk you'd like (ml)</h3>
+			<input type="range" id="myRange" value="90">
+
+		<h3 class="center">Select how much cereal you'd like (g)</h3>
+			<input type="range" id="myRange" value="90">
+
+			<script>
+			function myFunction() {
+			    var x = document.getElementById("myRange").value;
+			    document.getElementById("demo").innerHTML = x;
+			}
+			</script>
+	<a href="#home" data-role="button">Home</a>
 	</div>
 	<div data-role="footer">
 		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
@@ -81,6 +104,15 @@
 	</div>
 	<div data-role="main" class="ui-content">
 	<p>I want to set my name and my IP</p>
+
+	<h3 class="center">Enter your details</h3>
+		<form class="center">
+	  		First name:<br>
+	 		<input type="text" name="firstname"><br>
+			Last name:<br>
+	  		<input type="text" name="lastname">
+		</form> 
+	<a href="#home" data-role="button">Home</a>
 	</div>
 	<div data-role="footer">
 		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
@@ -97,6 +129,7 @@
 	<div data-role="main" class="ui-content">
 	<p>I want to see detailed analytics about my cereal, calorie and nutrional consumption over the last few months</p>
 	</div>
+	<a href="#home" data-role="button">Home</a>
 	<div data-role="footer">
 		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
 		</div>
