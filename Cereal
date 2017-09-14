@@ -26,10 +26,10 @@
 			<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#Home" data-icon="grid">Home</a></li>
-					<li><a href="#SetCerealTime" data-icon="grid">Set Cereal Time</a></li>
-					<li><a href="#Settings" data-icon="grid">Settings</a></li>
-					<li><a href="#Nutrition" data-icon="grid">Nutrition</a></li>
+					<li><a href="#Home" data-icon="home">Home</a></li>
+					<li><a href="#SetCerealTime" data-icon="clock">Set Cereal Time</a></li>
+					<li><a href="#Settings" data-icon="gear">Settings</a></li>
+					<li><a href="#Nutrition" data-icon="heart">Nutrition</a></li>
 				</ul>
 			</div>
 		</div>
@@ -84,8 +84,6 @@
 			</div>
 	</div>
 	<div data-role="main" class="ui-content">
-	<p>I want my cereal tomorrow at 6am please</p>
-
 		<h3 class="center">Select your cereal</h3>
 			<select name="Types of Cereal" >
 				<option value="Cornflakes">Cornflakes</option>
@@ -94,10 +92,10 @@
 			</select>
 
 		<h3 class="center">Select how much milk you'd like (ml)</h3>
-			<input type="range" id="myRange" value="90">
+			<input type="range" min="0" max="500" id=myRange value="250">
 
 		<h3 class="center">Select how much cereal you'd like (g)</h3>
-			<input type="range" id="myRange" value="90">
+			<input type="range" id="myRange" min="0" max="100" value="50">
 
 			<script>
 			function myFunction() {
