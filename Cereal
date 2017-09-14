@@ -3,6 +3,7 @@
 <html lang="en-UK">
 
 <head>
+	<meta charset="utf-8">
 	<!--This links this page to the CSS style sheet-->
 	<link rel="stylesheet" type="text/css" href="Cereal.CSS">
 
@@ -12,42 +13,6 @@
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-	<!--Encased in the script tag below is the code for cookies. It asks a user for their name and should sotre it and great them next time, although hasnt been working that well for me. Copied it form W3schools-->
-<script>
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-function checkCookie() {
-    var user = getCookie("username");
-    if (user != "") {
-        alert("Welcome again " + user);
-    } else {
-        user = prompt("Please enter your name:", "");
-        if (user != "" && user != null) {
-            setCookie("username", user, 365);
-        }
-    }
-}
-</script> 
 
 	<!-- Here is the title-->
 	<title>RoboCereal</title>
@@ -55,8 +20,8 @@ function checkCookie() {
 
 
 	<!--Below is whre the bulk of the web page code is-->
-<body onload="checkCookie()">
-	<div data-role="page">
+<body >
+	<div data-role="page" id="home">
 		<div data-role="header">
 			<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
 		</div>
@@ -67,18 +32,42 @@ function checkCookie() {
 			<p class="center">Making mornings faster</p>
 			<br>
 
-			<form>
-				<input type="button" value="Make cereal now" onclick="Settings.html">
-			</form>
-			<br>
-			<input type="button" value="Settings" onclick="Settings.html">
-			<br>
-			<input type="button" value="Nutritional data" onclick="CerealData.html">
+			<a href="#Settings" data-role="button"> Settings</a>
 			<br>
 			</div>
+			<a href="#Nutrition" data-role="button">Nutrition Data</a>
+			<br>
 		<div data-role="footer">
 			<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
 		</div>
 	</div>
+
+<!--SETTINGS PAGE-->
+<div data-role="page" id="Settings">
+<div data-role="header">
+</div>
+<div data-role="main" class="ui-content">
+brap brap
+</div>
+<div data-role="footer">
+			<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
+		</div>
+</div>
+
+
+
+<!--NUTRITION PAGE-->
+<div data-role="page" id="Nutrition">
+<div data-role="header">
+</div>
+<div data-role="main" class="ui-content">
+brap brap
+</div>
+<div data-role="footer">
+			<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
+		</div>
+</div>
+
+
 </body>
 </html>
