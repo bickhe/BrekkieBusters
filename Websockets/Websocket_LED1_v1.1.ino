@@ -17,8 +17,8 @@ const char* password = "AUCQURXA"; // <===================== your Password
 const int LED1 = 4;
 const int LED2 = 5;
 
-//updater variable - consider replacing with javascript interval caller on clientside
-static unsigned long last = 0;
+//variables for analog pins
+int analogval = 0;
 
 
 void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length) {
@@ -37,6 +37,10 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
        else{
           webSocket.broadcastTXT("L10");
        }
+
+      //send current value on analog pin
+       webSocket.broadcastTXT("A1#" + String(analogval));
+       
       }
       break;
       
@@ -63,10 +67,15 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
         if (text == "getTH") {
           float h = dht.readHumidity();
           float t = dht.readTemperature();
-          Serial.println("Sending TH");
 
+          if (isnan(h) || isnan(t)){
+            return;
+          }
+          else{
+          Serial.println("Sending TH");
           webSocket.broadcastTXT("T:" + String(t));
           webSocket.broadcastTXT("H:" + String(h));
+          }
         }
 
         //reset all LEDs
@@ -76,6 +85,14 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
           Serial.println("reset");
           //webSocket.sendTXT(num, "RST", length);
           webSocket.broadcastTXT("RST");
+        }
+
+        //slider handling
+        if (text.substring(0,3) == "A1#") {
+            analogval = text.substring(text.indexOf('#') + 1).toInt();
+            analogWrite(LED2, (2.55 * analogval));
+            Serial.println("LED2 Brightness is " + String(analogval));
+            webSocket.broadcastTXT("LED2 " + String(analogval));
         }
         
       }
@@ -110,11 +127,5 @@ void setup() {
 void loop() {
 
   webSocket.loop();
-  
-//    if(millis() >= last) {
-//        String data = String(millis());
-//        webSocket.broadcastTXT(data);
-//        last += 1000;
-//        Serial.println(millis());
-//    }
+
 }
