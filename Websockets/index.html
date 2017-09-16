@@ -37,7 +37,9 @@
     function echoHandlePageLoad() {
 
         wsUri = document.getElementById('wsUri');
-        wsUri.value = 'ws://151.225.204.164:301/'
+        wsUri.value = 'ws://151.225.204.164:301/';
+
+        document.getElementById('analog1').value = 0;
 
         consoleLog = document.getElementById('consoleLog');
         sendMessage = document.getElementById('sendMessage');
@@ -99,6 +101,13 @@
         websocket.send("LED1");
         var span = document.createTextNode('SENT: ' + 'LED1 toggle');
         logElementToConsole(span);
+    }
+
+    function sendAnalog1() {
+        var r = parseInt(document.getElementById('analog1').value).toString();
+        document.getElementById('analog1val').innerHTML = r;
+        console.log('Analog1: ' + r);
+        websocket.send('A1#'+r);
     }
 
     //send text data
@@ -167,6 +176,13 @@
         document.getElementById('temperature').innerHTML = "Temperature = " +datain.substring(datain.indexOf(":") + 1) + "&deg";
       }
 
+      //slider update
+      else if (datain.includes('A1#')) {
+        document.getElementById('analog1').value = datain.substring(datain.indexOf("#") + 1);
+        document.getElementById('analog1val').innerHTML = datain.substring(datain.indexOf("#") + 1);
+      }
+
+
         //send to console
         var span = document.createElement('span');
         span.style.wordWrap = 'break-word';
@@ -229,9 +245,16 @@
                 <br>
                 <br>
 
-                <strong>Control LEDs</strong><br>
                 <!-- LED button -->
+                <strong>Control LEDs</strong><br>
                 <button type="button" id="led1" class="btn btn-success" onclick="doButton1()">LED 1 on</button>
+                <br>
+                <br>
+
+                <!-- Sliders -->
+                <strong>LED2 Brightness</strong>
+                <input id= "analog1" type= "range" min= "0" max= "100" step= "5" value="0" onchange="sendAnalog1();">
+                <span>Current Slider Value: <span id="analog1val" class="text-success">0</span></span>
                 <br>
                 <br>
 
@@ -241,7 +264,6 @@
                 <strong id='temperature'>Temperature =</strong>
                 <br>
                 <br>
-
 
 
             </div>
