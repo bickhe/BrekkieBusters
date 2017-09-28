@@ -74,15 +74,16 @@
     var sendBut;
     var clearLogBut;
     var getTempHumid;
-    var timeout1
+    var timeout
 
     function echoHandlePageLoad() {
         //default to homepage
         window.location.hash = '#Home';
 
         wsUri = document.getElementById('wsUri');
-        wsUri.value = 'ws://151.228.112.237:301/';//'ws://echo.websocket.org';
-        timeout1 = true
+        wsUri.value = 'ws://192.168.1.67:301/';//'ws://echo.websocket.org';
+
+        //get password from storage if possible
         var passwordstart = localStorage.getItem('passwordx');
         document.getElementById('password').value = passwordstart;
 
@@ -93,38 +94,20 @@
         else{
             startlogin = "0"
         }
-
-        //document.getElementById('analog1').value = 0;
-        //sendMessage = document.getElementById('sendMessage');
     }
 
 
 
     //connection function
     function doConnect() {
-        timeout1 = true
+
         var uri = wsUri.value;
 
         //show modal
         document.getElementById('myModal'+ startlogin).style.display = "block";
-
-        setTimeout(function() {
-            if (timeout1 == true) {
-            document.getElementById('modaltext'+ startlogin).innerHTML = 'Connection failed';
-            
-
-            setTimeout(function() {
-              document.getElementById('myModal'+ startlogin).style.display = "none";
-              document.getElementById('modaltext'+ startlogin).innerHTML = 'Connecting';
-              startlogin = "0"
-            }, 2000);
-            }
-            else {
-                timeout1 = true
-            }
-        }, 10000);
-
         
+        //default as if it is timing out and then call modal
+        modalDelay(10000,2000,'Connection failed','Disconnect',"doDisconnect()",'#Home');          
 
         websocket = new WebSocket(uri);
         websocket.onopen = function(evt) {
@@ -154,27 +137,15 @@
     //button 1
     function doButton1() {
         websocket.send("LED1");
+        //put in "no connection!" code
     }
 
-    function sendAnalog1() {
-        //var r = parseInt(document.getElementById('analog1').value).toString();
-        //document.getElementById('analog1val').innerHTML = r;
-        //console.log('Analog1: ' + r);
-        //websocket.send('A1#' + r);
-    }
-
-    //send text data
-    // function doSend() {
-    //     websocket.send(sendMessage.value);
-    // }
 
     //websocket started
     function onOpen(evt) {
         console.log('CONNECTED');
         var pass = 'PW#' + document.getElementById('password').value;
         websocket.send(pass)
-        wsUri.disabled = true;
-        document.getElementById('password').disabled = true;
 
         //get temp and humidity periodically - change update time here
         //getTempHumid = setInterval(getTempHumidity, 3000);
@@ -197,6 +168,20 @@
         localStorage.setItem('passwordx', document.getElementById('password').value);
     }
 
+    //handle connection modals - this code is awful but it works!
+    function modalDelay(time1,time2,modalhtml1,modalhtml2,buttonfunc,startpage){
+            setTimeout(function() {
+            document.getElementById('modaltext'+ startlogin).innerHTML = modalhtml1;
+            setTimeout(function() {
+                  document.getElementById('myModal'+ startlogin).style.display = "none";
+                  document.getElementById('connect').innerHTML = modalhtml2;
+                  document.getElementById('connect').setAttribute("onClick",buttonfunc);
+                  document.getElementById('modaltext'+ startlogin).innerHTML = 'Connecting';
+                  startlogin = "0"
+                  window.location.hash = startpage
+                }, time2);
+        }, time1);  
+    }
 
     //message recieved
     function onMessage(evt) {
@@ -206,62 +191,22 @@
 
         //interprits password response
         if (datain.substring(0,3) == "P#G") {
-
-            timeout1 = false
-
-            setTimeout(function() {
-              document.getElementById('modaltext'+ startlogin).innerHTML = 'Connection successful!';
-              localStorage.setItem('passwordx', document.getElementById('password').value);
-              
-
-            setTimeout(function() {
-              document.getElementById('myModal'+ startlogin).style.display = "none";
-              document.getElementById('connect').innerHTML = 'Disconnect';
-              document.getElementById('connect').setAttribute("onClick","doDisconnect()");
-              document.getElementById('modaltext'+ startlogin).innerHTML = 'Connecting';
-              startlogin = "0"
-            }, 2000);
-            }, 2000);
-
-            
+            modalDelay(2000,2000,'Connection successful!','Disconnect',"doDisconnect()",'#Home',false);
+            wsUri.disabled = true;
+            document.getElementById('password').disabled = true;       
         }
         else if (datain.substring(0,3) == "P#B") {
             websocket.close();
-
-            timeout1 = false
-
-            setTimeout(function() {
-            document.getElementById('modaltext'+ startlogin).innerHTML = 'Incorrect Password';
-            
-            setTimeout(function() {
-              document.getElementById('myModal' + startlogin).style.display = "none";
-              document.getElementById('modaltext'+ startlogin).innerHTML = 'Connecting';
-              startlogin = "0"
-            }, 2000);
-            }, 2000);
-
+            modalDelay(2000,2000,'Incorrect Password','Connect',"doConnect()",'#Settings',false);
+            doDisconnect()         
         }
 
-        //interprits data in LEDs (L11 is LED 1 in state on)
-        // if (datain.includes('L11')) {
-        //     document.getElementById('led1').innerHTML = "LED 1 off";
-        //     document.getElementById('led1').className = "btn btn-danger";
-        // } else if (datain.includes('L10')) {
-        //     document.getElementById('led1').innerHTML = "LED 1 on";
-        //     document.getElementById('led1').className = "btn btn-success";
-        // }
 
         // //interprits data from sensors (H: is humidity and T: is temperature)
         // else if (datain.includes('H:')) {
         //     document.getElementById('humidity').innerHTML = "Humidity = " + datain.substring(datain.indexOf(":") + 1) + "%";
         // } else if (datain.includes('T:')) {
         //     document.getElementById('temperature').innerHTML = "Temperature = " + datain.substring(datain.indexOf(":") + 1) + "&deg";
-        // }
-
-        // //slider update
-        // else if (datain.includes('A1#')) {
-        //     document.getElementById('analog1').value = datain.substring(datain.indexOf("#") + 1);
-        //     document.getElementById('analog1val').innerHTML = datain.substring(datain.indexOf("#") + 1);
         // }
 
 
@@ -317,9 +262,9 @@
                 <br>
 		</div>
 
-		<div data-role="footer" data-position="fixed">
-			<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
-		</div>
+<!-- 		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<h2 class="center">Henry Dan Dan Rachael 2017</h2>
+		</div> -->
 	</div>
 
 
@@ -357,9 +302,10 @@
 			}
 			</script>
 	</div>
-	<div data-role="footer" data-position="fixed">
-		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
-	</div>
+
+<!-- 	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<h2 class="center">Henry Dan Dan Rachael 2017</h2>
+	</div> -->
 </div>
 
 
@@ -404,9 +350,10 @@
 
 		</form> 
 	</div>
-	<div data-role="footer" data-position="fixed">
-		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
-		</div>
+
+<!-- 	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<h2 class="center">Henry Dan Dan Rachael 2017</h2>
+		</div> -->
 </div>
 
 
@@ -427,9 +374,10 @@
 	<div data-role="main" class="ui-content">
 	<p>I want to see detailed analytics about my cereal, calorie and nutrional consumption over the last few months</p>
 	</div>
-	<div data-role="footer" data-position="fixed">
-		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
-		</div>
+
+<!-- 	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<h2 class="center">Henry Dan Dan Rachael 2017</h2>
+		</div> -->
 </div>
 
 
