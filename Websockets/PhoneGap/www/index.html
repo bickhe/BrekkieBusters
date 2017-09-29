@@ -23,6 +23,10 @@
     <link rel='stylesheet' href='https://www.websocket.org/css/style.css' type='text/css' />
 
     <style>
+
+
+
+
         /* The Modal (background) */
         .modal {
             display: none; /* Hidden by default */
@@ -40,7 +44,7 @@
         /* Modal Content/Box */
         .modal-content {
             background-color: #f2f2f2;
-            margin: 30% auto; /* 15% from the top and centered */
+            margin: 50% auto; /* 15% from the top and centered */
             padding: 20px;
             border: 1px solid #888;
             width: 160px; /* Could be more or less, depending on screen size */
@@ -104,10 +108,15 @@
         var uri = wsUri.value;
 
         //show modal
-        document.getElementById('myModal'+ startlogin).style.display = "block";
-        
-        //default as if it is timing out and then call modal
-        modalDelay(10000,2000,'Connection failed','Disconnect',"doDisconnect()",'#Home');          
+        document.getElementById('myModal1').style.display = "block";
+
+
+        //timeout after 15 seconds
+        setTimeout(function() {
+         	if (websocket.readyState != WebSocket.OPEN) {
+         		websocket.close();
+		}
+        }, 15000);
 
         websocket = new WebSocket(uri);
         websocket.onopen = function(evt) {
@@ -160,8 +169,14 @@
     //websocket closed
     function onClose(evt) {
         console.log('DISCONNECTED');
+        console.log(evt)
         wsUri.disabled = false;
         document.getElementById('password').disabled = false;
+        
+        //if disconnect caused by client timeout
+        if (evt.code == 1006) {
+        	modalDelay(0,2000,'Connection failed','Connect',"doConnect()",'#Settings');  
+        }
     }
 
     function savePass(){
@@ -171,12 +186,12 @@
     //handle connection modals - this code is awful but it works!
     function modalDelay(time1,time2,modalhtml1,modalhtml2,buttonfunc,startpage){
             setTimeout(function() {
-            document.getElementById('modaltext'+ startlogin).innerHTML = modalhtml1;
+            document.getElementById('modaltext1').innerHTML = modalhtml1;
             setTimeout(function() {
-                  document.getElementById('myModal'+ startlogin).style.display = "none";
+                  document.getElementById('myModal1').style.display = "none";
                   document.getElementById('connect').innerHTML = modalhtml2;
                   document.getElementById('connect').setAttribute("onClick",buttonfunc);
-                  document.getElementById('modaltext'+ startlogin).innerHTML = 'Connecting';
+                  document.getElementById('modaltext1').innerHTML = 'Connecting';
                   startlogin = "0"
                   window.location.hash = startpage
                 }, time2);
@@ -215,6 +230,7 @@
     //error recieved
     function onError(evt) {
         //special error handling here?
+        //console.log(evt)
     }
 
     window.addEventListener('load', echoHandlePageLoad, false);
@@ -222,9 +238,21 @@
 
 
 <!--HOME PAGE CODE-->
-<body >
+<body>
+	            <!-- The Modal -->
+	            <div id="myModal1" class="modal"><!-- class="modal"> -->
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="text-center"><strong id="modaltext1">Connecting</strong></div>
+                <br>
+                <br>
+                <div class="loader"></div>
+              </div>
+            </div>
+
 	<div data-role="page" id="Home">
 		<div data-role="header">
+			<br>
 			<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
 			<div data-role="navbar">
 				<ul>
@@ -242,24 +270,10 @@
 			<br>
 			<button type="button" id="button1" class="btn btn-primary" onclick="doButton1()">Make Cereal now</button>
             <br>
-            <!-- The Modal -->
-            <div id="myModal1" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                <div class="text-center"><strong id="modaltext1">Connecting</strong></div>
-                <br>
-                <br>
-                <div class="loader"></div>
-              </div>
-            </div>
+
+
         </div>
-                        <br>
-                <br>
-                <br>
-                <br>                
-                <br>
-                <br>
-                <br>
+
 		</div>
 
 <!-- 		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
@@ -271,6 +285,7 @@
 <!--SET CEREAL TIME PAGE-->
 <div data-role="page" id="SetCerealTime">
 	<div data-role="header">
+		<br>
 		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
 		<div data-role="navbar">
 				<ul>
@@ -313,6 +328,7 @@
 <!--SETTINGS PAGE-->
 <div data-role="page" id="Settings">
 	<div data-role="header">
+		<br>
 		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
 		<div data-role="navbar">
 				<ul>
@@ -337,17 +353,6 @@
             <!-- connect button is dynamic -->
             <button type="button" id="connect" class="btn btn-primary" onclick="doConnect()">Connect</button>
 
-            <!-- The Modal -->
-            <div id="myModal0" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                <div class="text-center"><strong id="modaltext0">Connecting</strong></div>
-                <br>
-                <br>
-                <div class="loader"></div>
-              </div>
-            </div>
-
 		</form> 
 	</div>
 
@@ -361,6 +366,7 @@
 <!--NUTRITION PAGE-->
 <div data-role="page" id="Nutrition">
 	<div data-role="header">
+		<br>
 		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
 		<div data-role="navbar">
 				<ul>
