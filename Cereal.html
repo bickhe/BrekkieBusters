@@ -24,67 +24,55 @@
 	<div data-role="page" id="Home">
 		<div data-role="header">
 			<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+			
+		</div>
+		<div data-role="main" class="ui-content">
+			<br>
+
+			<br>
+				
+				<div class="round-button">
+				<div class="round-button-circle">
+				<a href="#SetCerealTime" class="round-button">Dispense  Cereal</a>
+				</div>
+				</div>
+				
+			
+			<br>
+		</div>
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#Home" data-icon="home">Home</a></li>
-					<li><a href="#SetCerealTime" data-icon="clock">Set Cereal Time</a></li>
 					<li><a href="#Settings" data-icon="gear">Settings</a></li>
+					<li><a href="#Home" data-icon="home">Home</a></li>
 					<li><a href="#Nutrition" data-icon="heart">Nutrition</a></li>
 				</ul>
 			</div>
 		</div>
-		<div data-role="main" class="ui-content">
-			<br>
-			<h2 class="center">RoboCereal</h2>
-			<br>
-			<a href="#MakeCerealNow" data-role="button">Make Cereal now</a>
-			<br>
-		</div>
-		<div data-role="footer">
-			<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
-		</div>
 	</div>
 
 
-<!--MAKE CEREAL NOW PAGE - in future this might not exist-->
-<div data-role="page" id="MakeCerealNow">
+
+<!--SETTINGS PAGE-->
+<div data-role="page" id="Settings">
 	<div data-role="header">
 		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-		<div data-role="navbar">
-				<ul>
-					<li><a href="#Home" data-icon="grid">Home</a></li>
-					<li><a href="#SetCerealTime" data-icon="grid">Set Cereal Time</a></li>
-					<li><a href="#Settings" data-icon="grid">Settings</a></li>
-					<li><a href="#Nutrition" data-icon="grid">Nutrition</a></li>
-				</ul>
-			</div>
+		
 	</div>
 	<div data-role="main" class="ui-content">
-	<p>RoboCereal better be working because I'm hungry!!</p>
-			<br>
-	</div>
-	<div data-role="footer">
-		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
-	</div>
-</div>
+	
 
-
-
-<!--SET CEREAL TIME PAGE-->
-<div data-role="page" id="SetCerealTime">
-	<div data-role="header">
-		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-		<div data-role="navbar">
-				<ul>
-					<li><a href="#Home" data-icon="grid">Home</a></li>
-					<li><a href="#SetCerealTime" data-icon="grid">Set Cereal Time</a></li>
-					<li><a href="#Settings" data-icon="grid">Settings</a></li>
-					<li><a href="#Nutrition" data-icon="grid">Nutrition</a></li>
-				</ul>
-			</div>
+	<h3 class="center">Enter your details</h3>
+		<form class="center">
+	  		First name:<br>
+	 		<input type="text" name="firstname"><br>
+			Last name:<br>
+	  		<input type="text" name="lastname">
+		</form> 
 	</div>
-	<div data-role="main" class="ui-content">
-		<h3 class="center">Select your cereal</h3>
+	<br>
+	<br>
+	<h3 class="center">Select your cereal</h3>
 			<select name="Types of Cereal" >
 				<option value="Cornflakes">Cornflakes</option>
 	  			<option value="Alpen" >Alpen</option>
@@ -103,40 +91,17 @@
 			    document.getElementById("demo").innerHTML = x;
 			}
 			</script>
-	</div>
-	<div data-role="footer">
-		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
-	</div>
-</div>
+		<br>
+		<br>
 
-
-
-<!--SETTINGS PAGE-->
-<div data-role="page" id="Settings">
-	<div data-role="header">
-		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-		<div data-role="navbar">
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<div data-role="navbar">
 				<ul>
-					<li><a href="#Home" data-icon="grid">Home</a></li>
-					<li><a href="#SetCerealTime" data-icon="grid">Set Cereal Time</a></li>
-					<li><a href="#Settings" data-icon="grid">Settings</a></li>
-					<li><a href="#Nutrition" data-icon="grid">Nutrition</a></li>
+					<li><a href="#Settings" data-icon="gear">Settings</a></li>
+					<li><a href="#Home" data-icon="home">Home</a></li>
+					<li><a href="#Nutrition" data-icon="heart">Nutrition</a></li>
 				</ul>
 			</div>
-	</div>
-	<div data-role="main" class="ui-content">
-	<p>I want to set my name and my IP</p>
-
-	<h3 class="center">Enter your details</h3>
-		<form class="center">
-	  		First name:<br>
-	 		<input type="text" name="firstname"><br>
-			Last name:<br>
-	  		<input type="text" name="lastname">
-		</form> 
-	</div>
-	<div data-role="footer">
-		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
 		</div>
 </div>
 
@@ -146,21 +111,21 @@
 <div data-role="page" id="Nutrition">
 	<div data-role="header">
 		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-		<div data-role="navbar">
-				<ul>
-					<li><a href="#Home" data-icon="grid">Home</a></li>
-					<li><a href="#SetCerealTime" data-icon="grid">Set Cereal Time</a></li>
-					<li><a href="#Settings" data-icon="grid">Settings</a></li>
-					<li><a href="#Nutrition" data-icon="grid">Nutrition</a></li>
-				</ul>
-			</div>
 	</div>
+		
 	<div data-role="main" class="ui-content">
 	<p>I want to see detailed analytics about my cereal, calorie and nutrional consumption over the last few months</p>
 	</div>
-	<div data-role="footer">
-		<h2 class="center">&copy; Henry Dan Dan Rachael 2017</h2>
-		</div>
+
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Settings" data-icon="gear">Settings</a></li>
+					<li><a href="#Home" data-icon="home">Home</a></li>
+					<li><a href="#Nutrition" data-icon="heart">Nutrition</a></li>
+				</ul>
+			</div>
+	</div>
 </div>
 
 
