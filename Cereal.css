@@ -2,10 +2,9 @@
 .center {
     text-align: center;
 }
-
-body { background-color:
-	blue;
+h1 {font-family: 'Aldrich';
 }
+.navbar li {font-family: 'Aldrich';}
 
 
 .round-button {
@@ -18,12 +17,11 @@ body { background-color:
     border-radius: 50%;
 	border:10px solid black;
     overflow:hidden;
-    
     background: red; 
-    box-shadow: 0 0 3px gray;
+   
 }
 .round-button-circle:hover {
-	background:#30588e;
+	background:green;
 }
 .round-button a {
     display:block;
@@ -33,9 +31,8 @@ body { background-color:
 	padding-bottom: 45%;
     
 	text-align:center;
-	color:red;
-    font-family:Verdana;
+	color:black;
+	font-family: 'Aldrich';
     font-size:1em;
-    font-weight:bold;
-    text-decoration:none;
+    text-decoration: none;
 }
