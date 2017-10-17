@@ -32,7 +32,7 @@
 
 			<br>
 				
-				<div class="round-button"  class="center">
+				<div class="round-button">
 				<div class="round-button-circle" class="center">
 				<a href="#SetCerealTime" class="round-button" class="center">Dispense  Cereal</a>
 				</div>
@@ -46,7 +46,7 @@
 				<ul>
 					<li><a href="#Settings" data-icon="gear"></a></li>
 					<li><a href="#Home" data-icon="home"></a></li>
-					<li><a href="#Nutrition" data-icon="heart"></a></li>
+					<li><a href="#Timer" data-icon="clock"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -61,23 +61,13 @@
 		
 	</div>
 	<div data-role="main" class="ui-content">
-	
 
-	<h3 class="center">Enter your details</h3>
-		<form class="center">
-	  		First name:<br>
-	 		<input type="text" name="firstname"><br>
-			Last name:<br>
-	  		<input type="text" name="lastname">
-		</form> 
-	</div>
-	<br>
 	<br>
 	<h3 class="center">Select your cereal</h3>
 			<select name="Types of Cereal" >
 				<option value="Cornflakes">Cornflakes</option>
 	  			<option value="Alpen" >Alpen</option>
-	  			<option value="Cocopops" >Cocopops</option>
+	  			<option value="Granola" >Cocopops</option>
 			</select>
 
 		<h3 class="center">Select how much milk you'd like (ml)</h3>
@@ -100,7 +90,7 @@
 				<ul>
 					<li><a href="#Settings" data-icon="gear"></a></li>
 					<li><a href="#Home" data-icon="home"></a></li>
-					<li><a href="#Nutrition" data-icon="heart"></a></li>
+					<li><a href="#Timer" data-icon="clock"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -108,22 +98,57 @@
 
 
 
-<!--NUTRITION PAGE-->
-<div data-role="page" id="Nutrition">
+<!--TIMER PAGE-->
+<div data-role="page" id="Timer">
 	<div data-role="header">
 		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
 	</div>
 		
 	<div data-role="main" class="ui-content">
-	<p>I want to see detailed analytics about my cereal, calorie and nutrional consumption over the last few months</p>
 	</div>
-
+	<div id="clock-wrapper"></div>
+<audio class="audioDemo">
+  <source src="">
+</audio>
+   <div class="alrm-main"> <div class="txtoftime">Set the time you want cereal to be made</div>
+    <center>  <input class="getalarmtime" type="text" placeholder="12:10"/></center>
+    <div class="btntosetalrm">Set Cereal Time</div>
+    </div>
+    <div class="when-alrm-ring">Cereal will be made at <span class="aumkar"></span></div>
+    <br/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900' rel='stylesheet' type='text/css'>
+    <script>
+        setInterval(function() {
+    var date = new Date();
+    var cuttime =  date.getHours() + ":" + date.getMinutes() ;
+    $('#clock-wrapper').html(cuttime);
+    
+  $(".btntosetalrm").click(function(){
+     var alRmTime = $(".getalarmtime").val();  
+     if(alRmTime){
+     $('.aumkar').html(alRmTime);
+     $(".alrm-main").css("display","none");
+     $(".when-alrm-ring").css("display","block");
+     }
+        
+     else{
+     return false;
+     }
+     });
+          var awesome = $(".aumkar").html();  
+        
+    if(awesome == cuttime){
+    $(".audioDemo").trigger('play');
+    }
+    
+}, 500);
+</script>
 	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#Settings" data-icon="gear"></a></li>
 					<li><a href="#Home" data-icon="home"></a></li>
-					<li><a href="#Nutrition" data-icon="heart"></a></li>
+					<li><a href="#Timer" data-icon="clock"></a></li>
 				</ul>
 			</div>
 	</div>
