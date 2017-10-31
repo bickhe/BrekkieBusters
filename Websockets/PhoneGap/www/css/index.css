@@ -45,6 +45,10 @@ body {
     width:100%;
 }
 
+/*robot font*/
+h1 {font-family: 'Aldrich';
+}
+.navbar li {font-family: 'Aldrich';}
 /* Portrait layout (default) */
 .app {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */

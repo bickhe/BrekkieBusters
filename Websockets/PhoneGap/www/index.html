@@ -18,6 +18,8 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,400italic,500,600,700,700,800,900italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=ABeeZee:100,200,300,400,400italic,500,600,700,700,800,900italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css' />
 
+    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+
     <!-- CSS - using bootstrap and also another one I found-->
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' type='text/css' />
     <link rel='stylesheet' href='https://www.websocket.org/css/style.css' type='text/css' />
@@ -252,21 +254,13 @@
 
 	<div data-role="page" id="Home">
 		<div data-role="header">
-			<br>
+		
 			<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#Home" data-icon="home">Home</a></li>
-					<li><a href="#SetCerealTime" data-icon="clock">Set Cereal Time</a></li>
-					<li><a href="#Settings" data-icon="gear">Settings</a></li>
-					<li><a href="#Nutrition" data-icon="heart">Nutrition</a></li>
-				</ul>
-			</div>
 		</div>
 		<div data-role="main" class="ui-content">
             <div class="center">
 			<br>
-			<h2 class="text-center">RoboCereal</h2>
+			
 			<br>
 			<button type="button" id="button1" class="btn btn-primary" onclick="doButton1()">Make Cereal now</button>
             <br>
@@ -275,26 +269,26 @@
         </div>
 
 		</div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Settings" data-icon="gear"></a></li>
+                    <li><a href="#Home" data-icon="home"></a></li>
+                    <li><a href="#Timer" data-icon="clock"></a></li>
+                    
+                </ul>
+            </div>
 
-<!-- 		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
-			<h2 class="center">Henry Dan Dan Rachael 2017</h2>
-		</div> -->
+        </div>
+
 	</div>
 
 
-<!--SET CEREAL TIME PAGE-->
-<div data-role="page" id="SetCerealTime">
+<!--SETTINGS PAGE-->
+<div data-role="page" id="Settings">
 	<div data-role="header">
-		<br>
+	
 		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-		<div data-role="navbar">
-				<ul>
-                    <li><a href="#Home" data-icon="home">Home</a></li>
-                    <li><a href="#SetCerealTime" data-icon="clock">Set Cereal Time</a></li>
-                    <li><a href="#Settings" data-icon="gear">Settings</a></li>
-                    <li><a href="#Nutrition" data-icon="heart">Nutrition</a></li>
-				</ul>
-			</div>
 	</div>
 	<div data-role="main" class="ui-content">
 		<h3 class="center">Select your cereal</h3>
@@ -303,7 +297,7 @@
 	  			<option value="Alpen" >Alpen</option>
 	  			<option value="Cocopops" >Cocopops</option>
 			</select>
-
+            <br>
 		<h3 class="center">Select how much milk you'd like (ml)</h3>
 			<input type="range" min="0" max="500" id=myRange value="250">
 
@@ -316,75 +310,65 @@
 			    document.getElementById("demo").innerHTML = x;
 			}
 			</script>
-	</div>
-
-<!-- 	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
-		<h2 class="center">Henry Dan Dan Rachael 2017</h2>
-	</div> -->
-</div>
-
-
-
-<!--SETTINGS PAGE-->
-<div data-role="page" id="Settings">
-	<div data-role="header">
-		<br>
-		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-		<div data-role="navbar">
-				<ul>
-                    <li><a href="#Home" data-icon="home">Home</a></li>
-                    <li><a href="#SetCerealTime" data-icon="clock">Set Cereal Time</a></li>
-                    <li><a href="#Settings" data-icon="gear">Settings</a></li>
-                    <li><a href="#Nutrition" data-icon="heart">Nutrition</a></li>
-				</ul>
-			</div>
-	</div>
-	<div data-role="main" class="ui-content">
-	<p>I want to set my name and my IP</p>
-
-	<h3 class="center">Enter your details</h3>
-		<form class="center">
-	  		IP:<br>
-	 		<input type="text" id="wsUri">
+	
+            <br>
+    <h3 class="center">Set your IP details</h3>
+        <form class="center">
+            IP:<br>
+            <input type="text" id="wsUri">
 
             Password:<br>
-	  		<input type="text" id="password" onblur="savePass()">
+            <input type="text" id="password" onblur="savePass()">
 
             <!-- connect button is dynamic -->
             <button type="button" id="connect" class="btn btn-primary" onclick="doConnect()">Connect</button>
 
-		</form> 
-	</div>
+        </form> 
 
-<!-- 	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
-		<h2 class="center">Henry Dan Dan Rachael 2017</h2>
-		</div> -->
+    </div>
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Settings" data-icon="gear"></a></li>
+                    <li><a href="#Home" data-icon="home"></a></li>
+                    <li><a href="#Timer" data-icon="clock"></a></li>
+                    
+                </ul>
+            </div>
+
+        </div>
 </div>
 
 
 
-<!--NUTRITION PAGE-->
-<div data-role="page" id="Nutrition">
+<!--TIMER PAGE-->
+<div data-role="page" id="Timer">
 	<div data-role="header">
-		<br>
+	
 		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-		<div data-role="navbar">
-				<ul>
-                    <li><a href="#Home" data-icon="home">Home</a></li>
-                    <li><a href="#SetCerealTime" data-icon="clock">Set Cereal Time</a></li>
-                    <li><a href="#Settings" data-icon="gear">Settings</a></li>
-                    <li><a href="#Nutrition" data-icon="heart">Nutrition</a></li>
-				</ul>
-			</div>
 	</div>
 	<div data-role="main" class="ui-content">
-	<p>I want to see detailed analytics about my cereal, calorie and nutrional consumption over the last few months</p>
-	</div>
+	
 
-<!-- 	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
-		<h2 class="center">Henry Dan Dan Rachael 2017</h2>
-		</div> -->
+	<h3 class="center">Set the time you'd like your cereal to be dispensed</h3>
+		
+	</div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+                <ul>
+                    <li><a href="#Settings" data-icon="gear"></a></li>
+                    <li><a href="#Home" data-icon="home"></a></li>
+                    <li><a href="#Timer" data-icon="clock"></a></li>
+                    
+                </ul>
+        </div>
+
+    </div>
+
 </div>
+
+
 
 
 </body>
