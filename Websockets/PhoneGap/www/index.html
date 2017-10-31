@@ -29,7 +29,9 @@
         body{font-family: 'Aldrich'}
         h1 {font-family: 'Aldrich';}
         h3 {font-family: 'Aldrich'}
-        
+        #btnClose .ui-button-text {
+padding: 0;
+}
 
         /* The Modal (background) */
         .modal {
@@ -265,7 +267,7 @@
 			<br>
 			
 			<br>
-			<button type="button" id="button1" class="btn btn-primary" onclick="doButton1()">Make Cereal now</button>
+			<button type="button" id="button1" class="ui-button-text" onclick="doButton1()">Make Cereal now</button>
             <br>
 
 
@@ -295,16 +297,12 @@
         <a href='#IP' data-icon="star" class="ui-btn-right">IP details</a>
 	</div>
 	<div data-role="main" class="ui-content">
-		<h3 class="center">Select your cereal</h3>
-			<select name="Types of Cereal" >
-				<option value="Cornflakes">Cornflakes</option>
-	  			<option value="Alpen" >Alpen</option>
-	  			<option value="Cocopops" >Cocopops</option>
-			</select>
+   
+            <br>
             <br>
 		<h3 class="center">Select how much milk you'd like (ml)</h3>
 			<input type="range" min="0" max="500" id=myRange value="250">
-
+            <br>
 		<h3 class="center">Select how much cereal you'd like (g)</h3>
 			<input type="range" id="myRange" min="0" max="100" value="50">
 
@@ -315,7 +313,7 @@
 			}
 			</script>
 	
-            <br>
+    
    
 
     </div>
