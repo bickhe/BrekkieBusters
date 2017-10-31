@@ -26,8 +26,11 @@
 
     <style>
 
-
-
+        body{font-family: 'Aldrich'}
+        h1 {font-family: 'Aldrich';}
+        h3 {font-family: 'Aldrich'}
+        button {font-family: 'Aldrich'}
+.navbar li {font-family: 'Aldrich';}
 
         /* The Modal (background) */
         .modal {
@@ -253,9 +256,10 @@
             </div>
 
 	<div data-role="page" id="Home">
-		<div data-role="header">
+		<div data-role="header" style="overflow:hidden;">
 		
 			<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+           
 		</div>
 		<div data-role="main" class="ui-content">
             <div class="center">
@@ -289,6 +293,7 @@
 	<div data-role="header">
 	
 		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+        <a href='#IP' data-icon="star" class="ui-btn-right">IP details</a>
 	</div>
 	<div data-role="main" class="ui-content">
 		<h3 class="center">Select your cereal</h3>
@@ -312,18 +317,7 @@
 			</script>
 	
             <br>
-    <h3 class="center">Set your IP details</h3>
-        <form class="center">
-            IP:<br>
-            <input type="text" id="wsUri">
-
-            Password:<br>
-            <input type="text" id="password" onblur="savePass()">
-
-            <!-- connect button is dynamic -->
-            <button type="button" id="connect" class="btn btn-primary" onclick="doConnect()">Connect</button>
-
-        </form> 
+   
 
     </div>
 
@@ -368,8 +362,43 @@
 
 </div>
 
+<!--TIMER PAGE-->
 
+<div data-role="page" id="IP">
+    <div data-role="header">
+    
+        <h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+    
+         <h3 class="center">Set your IP details</h3>
+        <form class="center">
+            IP:<br>
+            <input type="text" id="wsUri">
 
+            Password:<br>
+            <input type="text" id="password" onblur="savePass()">
+
+            <!-- connect button is dynamic -->
+            <button type="button" id="connect" class="btn btn-primary" onclick="doConnect()">Connect</button>
+
+        </form> 
+    
+        
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+                <ul>
+                    <li><a href="#Settings" data-icon="gear"></a></li>
+                    <li><a href="#Home" data-icon="home"></a></li>
+                    <li><a href="#Timer" data-icon="clock"></a></li>
+                    
+                </ul>
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
