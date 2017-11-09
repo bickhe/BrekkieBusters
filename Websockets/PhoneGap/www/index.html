@@ -3,35 +3,51 @@
 <html lang="en-UK">
 
 <head>
-	<meta charset="utf-8">
-	<!--This links this page to the CSS style sheet-->
-	<link rel="stylesheet" type="text/css" href="/css/Cereal.CSS">
+    <meta charset="utf-8">
 
-	<!--The next three tags are needed for Jquerry mobile to work-->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <!--The next three tags are needed for Jquerry mobile to work-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!-- <script type="text/javascript" src="cordova.js"></script> -->
-
-    <!-- Google Fonts - these look nice! -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,400italic,500,600,700,700,800,900italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=ABeeZee:100,200,300,400,400italic,500,600,700,700,800,900italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css' />
-
-    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
 
     <!-- CSS - using bootstrap and also another one I found-->
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' type='text/css' />
-    <link rel='stylesheet' href='https://www.websocket.org/css/style.css' type='text/css' />
+
+    <!-- activate for server:-->
+<!--<link rel="stylesheet" href="/css/jquery.mobile-1.4.5.min.css" />
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.mobile-1.4.5.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' /> -->
+
 
     <style>
 
-        body{font-family: 'Aldrich'}
-        h1 {font-family: 'Aldrich';}
-        h3 {font-family: 'Aldrich'}
-        #btnClose .ui-button-text {
-padding: 0;
+    /* latin */
+@font-face {
+  font-family: 'Aldrich';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Aldrich Regular'), local('Aldrich-Regular'), url(https://fonts.gstatic.com/s/aldrich/v8/j-NnyokbAnhXANS2iZ6Jew.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
+        body {
+            font-family: 'Aldrich'
+        }
+
+        h1 {
+            font-family: 'Aldrich';
+        }
+
+        h3 {
+            font-family: 'Aldrich'
+        }
+
+        #btnClose .ui-button-text {
+            padding: 0;
+        }
 
 
 
@@ -39,31 +55,45 @@ padding: 0;
 
 
         /* The Modal (background) */
+
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1001;
+            /* Sit on top */
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
         }
 
         /* Modal Content/Box */
+
         .modal-content {
             background-color: #f2f2f2;
-            margin: 50% auto; /* 15% from the top and centered */
+            margin: 50% auto;
+            /* 15% from the top and centered */
             padding: 20px;
             border: 1px solid #888;
-            width: 160px; /* Could be more or less, depending on screen size */
+            width: 160px;
+            /* Could be more or less, depending on screen size */
         }
 
         .loader {
-            border: 16px solid #d3d3d3; /* Light grey */
-            border-top: 16px solid #3498db; /* Blue */
+            border: 16px solid #d3d3d3;
+            /* Light grey */
+            border-top: 16px solid #3498db;
+            /* Blue */
             border-radius: 50%;
             width: 120px;
             height: 120px;
@@ -71,13 +101,17 @@ padding: 0;
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 
-<!-- Here is the title-->
-<title>RoboCereal</title>
+    <!-- Here is the title-->
+    <title>RoboCereal</title>
 </head>
 
 <script>
@@ -88,15 +122,24 @@ padding: 0;
     var sendMessage;
     var sendBut;
     var clearLogBut;
-    var getTempHumid;
-    var timeout
+    var getConnect;
+    var timeout;
+    var timeout2;
 
     function echoHandlePageLoad() {
         //default to homepage
         window.location.hash = '#Home';
 
+        //disable navbar - assume they arent going to connect
+        document.getElementById('IPHome').href = '#';
+        document.getElementById('IPSettings').href = '#';
+        document.getElementById('IPTimer').href = '#';
+
         wsUri = document.getElementById('wsUri');
-        wsUri.value = 'ws://192.168.1.67:301/';//'ws://echo.websocket.org';
+        var wsUriStart = localStorage.getItem('wsUrix');
+        wsUri.value = wsUriStart;
+
+        //wsUri.value = 'ws://192.168.1.67:301/';//'ws://echo.websocket.org';
 
         //get password from storage if possible
         var passwordstart = localStorage.getItem('passwordx');
@@ -105,33 +148,63 @@ padding: 0;
         if (wsUri != "" && passwordstart != "") {
             startlogin = "1"
             doConnect()
-        }
-        else{
+        } else {
             startlogin = "0"
         }
     }
 
-
+    function testConnection() {
+        if (websocket.readyState === websocket.CLOSED) {
+            doConnect();
+        }
+    }
 
     //connection function
     function doConnect() {
 
+        localStorage.setItem('passwordx', document.getElementById('password').value);
+        localStorage.setItem('wsUrix', wsUri.value);
+
+        if (wsUri.value.substring(0,6) !== 'wss://' || wsUri.value.substring(0,5) !== 'ws://'){
+            var uri = 'wss://' + wsUri.value; // delete the 2nd 's' from this!
+        }
+        else{
         var uri = wsUri.value;
+        }
+        //now make sure the port is added!
+
+        var uri = 'wss://' + wsUri.value; // delete the 2nd 's' from this!
 
         //show modal
         document.getElementById('myModal1').style.display = "block";
 
-
         //timeout after 15 seconds
-        setTimeout(function() {
-         	if (websocket.readyState != WebSocket.OPEN) {
-         		websocket.close();
-		}
+        timeout = setTimeout(function() {
+            if (websocket.readyState != WebSocket.OPEN) {
+                websocket.close();
+            };
+        }, 15000);
+
+        timeout = setTimeout(function() {
+            document.getElementById('modaltext1').innerHTML = 'Connection failed';
+            timeout2 =setTimeout(function() {
+                document.getElementById('myModal1').style.display = "none";
+                document.getElementById('connect').innerHTML = 'Connect';
+                document.getElementById('connect').setAttribute("onClick", "doConnect()");
+                document.getElementById('modaltext1').innerHTML = 'Connecting';
+                startlogin = "0";
+                window.location.hash = '#IP';
+            }, 2000);
         }, 15000);
 
         websocket = new WebSocket(uri);
         websocket.onopen = function(evt) {
             onOpen(evt)
+            clearTimeout(timeout2);
+            clearTimeout(timeout);
+            if (getConnect) {} else {
+                getConnect = setInterval(testConnection, 3000);
+            }
         };
         websocket.onclose = function(evt) {
             onClose(evt)
@@ -147,25 +220,43 @@ padding: 0;
 
     //disconnection function
     function doDisconnect() {
-        websocket.close();
-        document.getElementById('connect').innerHTML = 'Connect';
-        document.getElementById('connect').setAttribute("onClick","doConnect()");
         wsUri.disabled = false;
         document.getElementById('password').disabled = false;
+        clearInterval(getConnect);
+        getConnect = null;
+        websocket.close();
+        document.getElementById('connect').innerHTML = 'Connect';
+        document.getElementById('connect').setAttribute("onClick", "doConnect()");
+
+        //force navbar to ip only
+        document.getElementById('IPHome').href = '#';
+        document.getElementById('IPSettings').href = '#';
+        document.getElementById('IPTimer').href = '#';
     }
 
     //button 1
     function doButton1() {
+        if (websocket.readyState === websocket.CLOSED) {
+            doConnect();
+        }
         websocket.send("LED1");
         //put in "no connection!" code
     }
 
+    //send cereal and milk portion choice to esp8266
+    function sendAnalog1() {
+        var m = parseInt(document.getElementById('milkPortion').value).toString();
+        var c = parseInt(document.getElementById('cerealPortion').value).toString();
+        //document.getElementById('analog1val').innerHTML = r;
+        console.log('MilkCereal: ' + m + ' ' + c);
+        websocket.send('MC#'+m+'.'+c);
+    }
 
     //websocket started
     function onOpen(evt) {
         console.log('CONNECTED');
         var pass = 'PW#' + document.getElementById('password').value;
-        websocket.send(pass)
+        websocket.send(pass);
 
         //get temp and humidity periodically - change update time here
         //getTempHumid = setInterval(getTempHumidity, 3000);
@@ -174,39 +265,39 @@ padding: 0;
 
     //get temp and humidity periodically called regularly
     //function getTempHumidity() {
-        //websocket.send("getTH");
+    //websocket.send("getTH");
     //}
 
     //websocket closed
     function onClose(evt) {
         console.log('DISCONNECTED');
-        console.log(evt)
+        console.log(evt);
         wsUri.disabled = false;
         document.getElementById('password').disabled = false;
-        
-        //if disconnect caused by client timeout
-        if (evt.code == 1006) {
-        	modalDelay(0,2000,'Connection failed','Connect',"doConnect()",'#IP');  
-        }
+
+        //if disconnect caused by client timeout - no need for this because of 3 second check
+        // if (evt.code == 1006) {
+        //     modalDelay(0, 2000, 'Connection failed', 'Connect', "doConnect()", '#IP');
+        // }
     }
 
-    function savePass(){
+    function savePass() {
         localStorage.setItem('passwordx', document.getElementById('password').value);
     }
 
     //handle connection modals - this code is awful but it works!
-    function modalDelay(time1,time2,modalhtml1,modalhtml2,buttonfunc,startpage){
-            setTimeout(function() {
+    function modalDelay(time1, time2, modalhtml1, modalhtml2, buttonfunc, startpage) {
+        setTimeout(function() {
             document.getElementById('modaltext1').innerHTML = modalhtml1;
             setTimeout(function() {
-                  document.getElementById('myModal1').style.display = "none";
-                  document.getElementById('connect').innerHTML = modalhtml2;
-                  document.getElementById('connect').setAttribute("onClick",buttonfunc);
-                  document.getElementById('modaltext1').innerHTML = 'Connecting';
-                  startlogin = "0"
-                  window.location.hash = startpage
-                }, time2);
-        }, time1);  
+                document.getElementById('myModal1').style.display = "none";
+                document.getElementById('connect').innerHTML = modalhtml2;
+                document.getElementById('connect').setAttribute("onClick", buttonfunc);
+                document.getElementById('modaltext1').innerHTML = 'Connecting';
+                startlogin = "0";
+                window.location.hash = startpage;
+            }, time2);
+        }, time1);
     }
 
     //message recieved
@@ -216,15 +307,23 @@ padding: 0;
         console.log(datain);
 
         //interprits password response
-        if (datain.substring(0,3) == "P#G") {
-            modalDelay(2000,2000,'Connection successful!','Disconnect',"doDisconnect()",'#Home',false);
+        if (datain.substring(0, 3) == '[ob'){//"P#G") {
+            modalDelay(2000, 2000, 'Connection successful!', 'Disconnect', "doDisconnect()", '#Home', false);
             wsUri.disabled = true;
-            document.getElementById('password').disabled = true;       
-        }
-        else if (datain.substring(0,3) == "P#B") {
+            document.getElementById('password').disabled = true;
+            document.getElementById('IPHome').href = '#Home';
+            document.getElementById('IPSettings').href = '#Settings';
+            document.getElementById('IPTimer').href = '#Timer';
+
+
+        } else if (datain.substring(0, 3) == "P#B") {
             websocket.close();
-            modalDelay(2000,2000,'Incorrect Password','Connect',"doConnect()",'#Settings',false);
-            doDisconnect()         
+            modalDelay(2000, 2000, 'Incorrect Password', 'Connect', "doConnect()", '#IP', false);
+            //force navbar to ip only
+            document.getElementById('IPHome').href = '#';
+            document.getElementById('IPSettings').href = '#';
+            document.getElementById('IPTimer').href = '#';
+            doDisconnect();
         }
 
 
@@ -249,36 +348,38 @@ padding: 0;
 
 
 <!--HOME PAGE CODE-->
-<body>
-	            <!-- The Modal -->
-	            <div id="myModal1" class="modal"><!-- class="modal"> -->
-              <!-- Modal content -->
-              <div class="modal-content">
-                <div class="text-center"><strong id="modaltext1">Connecting</strong></div>
-                <br>
-                <br>
-                <div class="loader"></div>
-              </div>
-            </div>
-
-	<div data-role="page" id="Home">
-		<div data-role="header" style="overflow:hidden;">
-		
-			<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-           
-		</div>
-		<div data-role="main" class="ui-content">
-            <div class="center">
-			<br>
-			
-			<br>
-			<button type="button" id="button1" class="ui-button-text" onclick="doButton1()">Dispense Cereal now</button>
+    <!-- The Modal -->
+    <div id="myModal1" class="modal">
+        <!-- class="modal"> -->
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="text-center"><strong id="modaltext1">Connecting</strong></div>
             <br>
+            <br>
+            <div class="loader"></div>
+        </div>
+    </div>
+<body>
 
+
+    <div data-role="page" id="Home">
+        <div data-role="header" style="overflow:hidden;">
+
+            <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
 
         </div>
+        <div data-role="main" class="ui-content">
+            <div class="center">
+                <br>
 
-		</div>
+                <br>
+                <button type="button" id="button1" class="ui-button-text" onclick="doButton1()">Dispense Cereal now</button>
+                <br>
+
+
+            </div>
+
+        </div>
         <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
             <div data-role="navbar">
                 <ul>
@@ -286,43 +387,33 @@ padding: 0;
                     <li><a href="#Settings" data-icon="gear"></a></li>
                     <li><a href="#Timer" data-icon="clock"></a></li>
                     <li><a href="#IP" data-icon="cloud"></a></li>
-                    
+
                 </ul>
             </div>
 
         </div>
 
-	</div>
-
-
-<!--SETTINGS PAGE-->
-<div data-role="page" id="Settings">
-	<div data-role="header">
-	
-		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-        
-	</div>
-	<div data-role="main" class="ui-content">
-   
-            <br>
-            <br>
-		<h3 class="center">Select how much milk you'd like (ml)</h3>
-			<input type="range" min="0" max="500" id=myRange value="250">
-            <br>
-		<h3 class="center">Select how much cereal you'd like (g)</h3>
-			<input type="range" id="myRange" min="0" max="100" value="50">
-
-			<script>
-			function myFunction() {
-			    var x = document.getElementById("myRange").value;
-			    document.getElementById("demo").innerHTML = x;
-			}
-			</script>
-	
-    
-   
-
     </div>
+
+
+    <!--SETTINGS PAGE-->
+    <div data-role="page" id="Settings">
+        <div data-role="header">
+
+            <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+
+        </div>
+        <div data-role="main" class="ui-content">
+
+            <br>
+            <br>
+            <h3 class="center">Select how much milk you'd like (ml)</h3>
+            <input type="range" min="0" max="3" id=milkPortion value="1" onchange="sendAnalog1();">
+            <br>
+            <h3 class="center">Portions of milk</h3>
+            <input type="range" id=cerealPortion min="0" max="3" value="1" onchange="sendAnalog1();">
+
+         </div>
 
         <div data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
@@ -335,74 +426,75 @@ padding: 0;
             </div>
 
         </div>
-</div>
+    </div>
 
 
 
-<!--TIMER PAGE-->
-<div data-role="page" id="Timer">
-	<div data-role="header">
-	
-		<h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-	</div>
-	<div data-role="main" class="ui-content">
-	
+    <!--TIMER PAGE-->
+    <div data-role="page" id="Timer">
+        <div data-role="header">
 
-	<h3 class="center">Set the time you'd like your cereal to be dispensed</h3>
-		
-	</div>
-    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
-        <div data-role="navbar">
+            <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+
+
+            <h3 class="center">Set the time you'd like your cereal to be dispensed</h3>
+
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
                 <ul>
                     <li><a href="#Home" data-icon="home"></a></li>
                     <li><a href="#Settings" data-icon="gear"></a></li>
                     <li><a href="#Timer" data-icon="clock"></a></li>
                     <li><a href="#IP" data-icon="cloud"></a></li>
                 </ul>
+            </div>
+
         </div>
 
     </div>
 
-</div>
+    <!--IP-->
 
-<!--IP-->
+    <div data-role="page" id="IP">
+        <div data-role="header">
 
-<div data-role="page" id="IP">
-    <div data-role="header">
-    
-        <h1 Title ="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
-    </div>
-    <div data-role="main" class="ui-content">
-    
-         <h3 class="center">Set your IP details</h3>
-        <form class="center">
-            IP:<br>
-            <input type="text" id="wsUri">
+            <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1>
+        </div>
+        <div data-role="main" class="ui-content">
 
-            Password:<br>
-            <input type="text" id="password" onblur="savePass()">
+            <h3 class="center">Set your IP details</h3>
+            <form class="center">
+                IP:<br>
+                <input type="text" id="wsUri"> Password:
 
-            <!-- connect button is dynamic -->
-            <button type="button" id="connect" class="btn btn-primary" onclick="doConnect()">Connect</button>
+                <br>
+                <input type="text" id="password" onblur="savePass()">
 
-        </form> 
-    
-        
-    </div>
-    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
-        <div data-role="navbar">
+                <!-- connect button is dynamic -->
+                <button type="button" id="connect" class="btn btn-primary" onclick="doConnect()">Connect</button>
+
+            </form>
+
+
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
                 <ul>
-                    <li><a href="#Home" data-icon="home"></a></li>
-                    <li><a href="#Settings" data-icon="gear"></a></li>
-                    <li><a href="#Timer" data-icon="clock"></a></li>
+                    <li><a id='IPHome' href="#Home" data-icon="home"></a></li>
+                    <li><a id='IPSettings' href="#Settings" data-icon="gear"></a></li>
+                    <li><a id='IPTimer' href="#Timer" data-icon="clock"></a></li>
                     <li><a href="#IP" data-icon="cloud"></a></li>
-                    
+
                 </ul>
+            </div>
+
         </div>
 
     </div>
-
-</div>
 
 </body>
+
 </html>
