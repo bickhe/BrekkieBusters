@@ -185,8 +185,7 @@
         if (websocket.readyState === websocket.CLOSED) {
             doConnect();
         } else {
-            //get sensor values
-            websocket.send("SenseOn");
+            //get sensor values? no need already sent from ESP
         }
     }
 
@@ -343,7 +342,8 @@
             }
             else
             {
-             modalDelay(2000, 2000, 'Connection successful!', 'Disconnect', "doDisconnect()");   
+                var activepage = '#' + $.mobile.activePage.attr("id");
+             modalDelay(2000, 2000, 'Connection successful!', 'Disconnect', "doDisconnect()", activepage);   
             }
             wsUri.classList.add('ui-disabled'); //.disabled = true;
             document.getElementById('password').classList.add('ui-disabled'); //.disabled = true;
@@ -410,8 +410,6 @@
         <div class="text-center"><strong>Place a bowl under the dispenser and try again.</strong></div>
         <br>
         <br>
-            <div data-role="main" class="ui-content">
-                <div class="center">
                     <br>
                     <div class="text-center">
                     <button type="button" class="ui-button-text ui-btn ui-shadow ui-corner-all" onclick="closeNB()" style="background: #232323; border-color: #232323; font-family:'Aldrich'; font-size: 150%; color: #fff;">Ok</button>
@@ -419,8 +417,6 @@
                 </div>
 
 
-                </div>
-            </div>
     </div>
 </div>
 
