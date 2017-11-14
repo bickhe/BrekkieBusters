@@ -15,12 +15,37 @@
     <!-- activate for server:-->
 
     <!-- <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" /> -->
-    <link rel="stylesheet" href="css/jquery.mobile.squareui.css" />
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel='stylesheet' href='css/bootstrap.min.css' type='text/css' />
 
+    <!--  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script> -->
+
+    <!--     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script> 
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="http://dev.jtsage.com/DateBox/js/doc.js"></script>
+    <script type="text/javascript" src="http://cdn.jtsage.com/jtsage-datebox/4.2.3/jtsage-datebox-4.2.3.jqm.min.js"></script>
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+        <link rel="stylesheet" href="http://cdn.jtsage.com/jtsage-datebox/4.2.3/jtsage-datebox-4.2.3.jqm.min.css" />
+
+         <link rel="stylesheet" href="css/jquery.mobile.squareui.css" /> 
+    <link rel='stylesheet' href='css/bootstrap.min.css' type='text/css' /> -->
+
+
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+
+    <link rel="stylesheet" href="css/jquery.mobile.squareui.css" />
+    <link rel="stylesheet" href="css/jtsage-datebox-4.2.3.jqm.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--     <script type="text/javascript" src="http://dev.jtsage.com/DateBox/js/doc.js"></script> -->
+    <script type="text/javascript" src="js/jtsage-datebox-4.2.3.jqm.js"></script>
 
     <style>
         /* latin */
@@ -50,9 +75,16 @@
         }
 
 
+        /*Red and green icons for timer*/
 
+        .ui-icon-checkgreen:after,
+        html .ui-btn.ui-checkbox-on.ui-checkbox-on:after {
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2214px%22%20height%3D%2214px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20style%3D%22fill%3A%23008000%3B%22%20points%3D%2214%2C4%2011%2C1%205.003%2C6.997%203%2C5%200%2C8%204.966%2C13%204.983%2C12.982%205%2C13%20%22%2F%3E%3C%2Fsvg%3E");
+        }
 
-
+        .ui-icon-deletered:after {
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2214px%22%20height%3D%2214px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20fill%3D%22%23B22222%22%20points%3D%2214%2C3%2011%2C0%207%2C4%203%2C0%200%2C3%204%2C7%200%2C11%203%2C14%207%2C10%2011%2C14%2014%2C11%2010%2C7%20%22%2F%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+        }
 
         /* The Modal (background) */
 
@@ -77,10 +109,12 @@
             /* Black w/ opacity */
         }
 
+
         /* Modal Content/Box */
 
         .modal-content {
-            background-color: #f9f9f9;;
+            background-color: #f9f9f9;
+            ;
             margin: 50% auto;
             /* 15% from the top and centered */
             padding: 20px;
@@ -96,6 +130,14 @@
             padding: 20px;*/
             /*border: 1px solid #888;*/
             width: 160px;
+            /* Could be more or less, depending on screen size */
+        }        
+        .modal-content3 {
+            background-color: #f9f9f9;
+            margin: 50% auto; 
+            padding: 20px;
+            /*border: 1px solid #888;*/
+            width: 240px;
             /* Could be more or less, depending on screen size */
         }
 
@@ -119,6 +161,19 @@
             }
         }
 
+        .under
+        {
+            position:relative;
+            left:0px;
+            top:-136px;
+        }
+        .over
+        {
+            position:relative;
+            left:0px;
+            top:0px;
+        }
+
         #content {
             position: absolute;
             top: 40px;
@@ -126,6 +181,124 @@
             bottom: 0;
             left: 0;
         }
+
+        /*falling cereal!*/
+
+        .fallingLeaves {
+            z-index: 10
+            /*text-align: center;*/
+        }
+
+        .fallingLeaves span {
+            display: inline-block;
+            width: 41px;
+            height: 21px;
+            /*margin: -28px 40px 54px -3px;*/
+            background: url("img/cereal3.png");
+            z-index: 10
+
+            -webkit-animation: fallingLeavesw 3s infinite linear;
+            -moz-animation: fallingLeavesm 3s infinite linear;
+            -o-animation: fallingLeaveso 3s infinite linear;
+            animation: fallingLeaves 3s infinite linear;
+        }
+
+        @-webkit-keyframes fallingLeavesw {
+            0% {
+                opacity: 1;
+
+                -webkit-transform: translate(0, 0px) rotateZ(0deg);
+            }
+            75% {
+                opacity: 1;
+
+                -webkit-transform: translate(0px, 800px) rotateZ(270deg);
+            }
+            100% {
+                opacity: 0;
+
+                -webkit-transform: translate(0px, 130px) rotateZ(360deg);
+            }
+        }
+
+        @-moz-keyframes fallingLeavesm {
+            0% {
+                opacity: 1;
+
+                -moz-transform: translate(0, 0px) rotateZ(0deg);
+            }
+            75% {
+                opacity: 1;
+
+                -moz-transform: translate(0px, 80px) rotateZ(270deg);
+            }
+            100% {
+                opacity: 0;
+
+                -moz-transform: translate(0px, 130px) rotateZ(360deg);
+            }
+        }
+        @-o-keyframes fallingLeaveso {
+            0% {
+                opacity: 1;
+
+                -o-transform: translate(0, 0px) rotateZ(0deg);
+            }
+            75% {
+                opacity: 1;
+
+                -o-transform: translate(0px, 80px) rotateZ(270deg);
+            }
+            100% {
+                opacity: 0;
+
+                -o-transform: translate(0px, 130px) rotateZ(360deg);
+            }
+        }
+        @keyframes fallingLeaves {
+            0% {
+                opacity: 1;
+
+                transform: translate(0, 0px) rotateZ(0deg);
+            }
+            75% {
+                opacity: 1;
+
+                transform: translate(0px, 80px) rotateZ(270deg);
+            }
+            100% {
+                opacity: 0;
+
+                transform: translate(0px, 130px) rotateZ(360deg);
+            }
+        }
+
+        /* ADD 6(e) and 7(f) column grid */
+        .ui-grid-e, .ui-grid-f { overflow: hidden; }
+
+        /* grid e: 16/16/16/16/16/16 */
+        .ui-grid-e .ui-block-a, .ui-grid-e .ui-block-b, .ui-grid-e .ui-block-c, .ui-grid-e .ui-block-d, .ui-grid-e .ui-block-e, .ui-grid-e .ui-block-f { width: 16.59166666666667%; }
+        .ui-grid-e > :nth-child(n) { width: 16.66666666666667%; }
+        .ui-grid-e .ui-block-a { clear: left; }
+
+        /* grid f: 14/14/14/14/14 */
+        .ui-grid-f .ui-block-a, .ui-grid-f .ui-block-b, .ui-grid-f .ui-block-c, .ui-grid-f .ui-block-d, .ui-grid-f .ui-block-e, .ui-grid-f .ui-block-f, .ui-grid-f .ui-block-g { width: 14.21071428571429%; }
+        .ui-grid-f > :nth-child(n) { width: 14.28571428571429%; }
+        .ui-grid-f .ui-block-a { clear: left; }
+
+        /* ADD 6th (f) and 7th (g) blocks in grid */
+        .ui-header .ui-navbar .ui-grid-e li.ui-block-f .ui-btn,
+        .ui-footer .ui-navbar .ui-grid-e li.ui-block-f .ui-btn { margin-right: -3px; }/* NOT TESTED */
+
+        .ui-header .ui-navbar .ui-grid-f li.ui-block-g .ui-btn,
+        .ui-footer .ui-navbar .ui-grid-f li.ui-block-g .ui-btn { margin-right: -2px; }/* NOT TESTED */
+
+        .ui-grid-e .ui-btn, .ui-grid-f .ui-btn { margin-right: 5px; margin-left: 5px; }
+
+        .ui-block-f, .ui-block-g { margin: 0; padding: 0; border: 0; float: left; min-height: 1px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+
+        .ui-header .ui-navbar .ui-grid-e li.ui-block-f .ui-btn-icon-right .ui-icon,
+        .ui-footer .ui-navbar .ui-grid-f li.ui-block-g .ui-btn-icon-right .ui-icon { right: 8px; }
     </style>
 
     <!-- Here is the title-->
@@ -143,6 +316,14 @@
     var getConnect;
     var timeout;
     var timeout2;
+    var milkP;
+    var cerealP;
+    var alarmHrsMins;
+    var alarmOn;
+
+    jQuery.extend(jQuery.mobile, {
+        ajaxEnabled: false
+    });
 
     function echoHandlePageLoad() {
         //default to homepage
@@ -176,8 +357,11 @@
             startlogin = "1";
             doConnect();
         } else {
+            alarmOn = false;
             startlogin = "0";
-            window.location.hash = '#IP';
+            $(':mobile-pagecontainer').pagecontainer('change', '#IP', {
+                transition: "none"
+            });
         }
     }
 
@@ -222,7 +406,9 @@
                 document.getElementById('connect').setAttribute("onClick", "doConnect()");
                 document.getElementById('modaltext1').innerHTML = 'Connecting';
                 startlogin = "0";
-                window.location.hash = '#IP';
+                $(':mobile-pagecontainer').pagecontainer('change', '#IP', {
+                    transition: "none"
+                });
             }, 2000);
         }, 15000);
 
@@ -272,14 +458,44 @@
         //put in "no connection!" code
     }
 
+    function doButton2(){
+        document.getElementById('myModal3').style.display = "block";
+        setTimeout(function(){ document.getElementById('myModal3').style.display = "none"; }, 10000);
+        //setTimeout(function(){document.getElementById('myModal3').style.display = "none";}4000);
+    }
+
     //send cereal and milk portion choice to esp8266
     function sendAnalog1() {
+        if (typeof websocket === "undefined") {
+            return;
+        }
+        if (websocket.readyState === websocket.CLOSED) {
+            doConnect();
+        }
         var m = parseInt(document.getElementById('milkPortion').value).toString();
         var c = parseInt(document.getElementById('cerealPortion').value).toString();
         //document.getElementById('analog1val').innerHTML = r;
         console.log('MilkCereal: ' + m + ' ' + c);
         websocket.send('MC#' + m + '.' + c);
     }
+
+    $(document).on('click', '#btnCalc', function() {
+        if (websocket.readyState === websocket.CLOSED) {
+            doConnect();
+        }
+
+        if (alarmOn === false) {
+            var wholeDate = $("#db").datebox('getTheDate');
+            alarmHrsMins = $('#db').datebox('callFormat', 'HM#%H.%M', wholeDate);
+            console.log('Timeset: ' + alarmHrsMins);
+            websocket.send(alarmHrsMins);
+            console.log('Alarm on');
+        } else if (alarmOn === true) {
+            console.log('Alarm off');
+            websocket.send('AO#');
+        }
+
+    });
 
     //websocket started
     function onOpen(evt) {
@@ -287,21 +503,25 @@
         var pass = 'PW#' + document.getElementById('password').value;
         websocket.send(pass);
 
-    }
+        //activate timer controls
+        $('#db').bind('datebox', function(e, passed) {
+            if (passed.method === 'offset') {
+                $('#btnCalc').removeClass("ui-icon-checkgreen").addClass("ui-icon-deletered");
+                $('#btnCalc').html("Set Alarm");
 
-    //send cereal and milk portion choice to esp8266
-    function sendAnalog1() {
-        var m = parseInt(document.getElementById('milkPortion').value).toString();
-        var c = parseInt(document.getElementById('cerealPortion').value).toString();
-        //document.getElementById('analog1val').innerHTML = r;
-        console.log('MilkCereal: ' + m + ' ' + c);
-        websocket.send('MC#' + m + '.' + c);
+                //alarm off message
+                console.log('Alarm off');
+                websocket.send('AO#');
+            }
+        });
+
     }
 
     //websocket closed
     function onClose(evt) {
         console.log('DISCONNECTED');
         console.log(evt);
+        clearInterval(getConnect);
         wsUri.classList.remove("ui-disabled"); //.disabled = false;
         document.getElementById('password').classList.remove("ui-disabled"); //.disabled = false;
     }
@@ -310,9 +530,27 @@
         localStorage.setItem('passwordx', document.getElementById('password').value);
     }
 
-    function closeNB(){
-        document.getElementById('myModal2').style.display = "none";        
+    function closeNB() {
+        document.getElementById('myModal2').style.display = "none";
     }
+
+    $(document).on("pagecontainerbeforeshow", function(event, ui) {
+        if (ui.toPage.prop("id") === "Settings") {
+            $("#cerealPortion").val(cerealP).slider("refresh");
+            $("#milkPortion").val(milkP).slider("refresh");
+        }
+    });
+
+    // $(document).on('pagechange', '#Settings', function() {
+    //     //alert(cerealP + " " + milkP);
+    //     //milkP = 2;
+    //     //cerealP = 3;
+    //     if (cerealP && milkP){
+    //         $("#cerealPortion").val(cerealP).slider("refresh");
+    //         $("#milkPortion").val(milkP).slider("refresh");
+    //     }
+
+    // });
 
     //handle connection modals - this code is awful but it works!
     function modalDelay(time1, time2, modalhtml1, modalhtml2, buttonfunc, startpage) {
@@ -324,7 +562,9 @@
                 document.getElementById('connect').setAttribute("onClick", buttonfunc);
                 document.getElementById('modaltext1').innerHTML = 'Connecting';
                 startlogin = "0";
-                $(':mobile-pagecontainer').pagecontainer('change', startpage, {transition : "none"});
+                $(':mobile-pagecontainer').pagecontainer('change', startpage, {
+                    transition: "none"
+                });
             }, time2);
         }, time1);
     }
@@ -337,13 +577,11 @@
 
         //interprits password response
         if (datain.substring(0, 3) == "P#G" || datain.substring(0, 3) == "[ob") { //'[ob') { //"P#G") {
-            if (startlogin == 1){
-            modalDelay(2000, 2000, 'Connection successful!', 'Disconnect', "doDisconnect()", '#Home');
-            }
-            else
-            {
+            if (startlogin == 1) {
+                modalDelay(2000, 2000, 'Connection successful!', 'Disconnect', "doDisconnect()", '#Home');
+            } else {
                 var activepage = '#' + $.mobile.activePage.attr("id");
-             modalDelay(2000, 2000, 'Connection successful!', 'Disconnect', "doDisconnect()", activepage);   
+                modalDelay(2000, 2000, 'Connection successful!', 'Disconnect', "doDisconnect()", activepage);
             }
             wsUri.classList.add('ui-disabled'); //.disabled = true;
             document.getElementById('password').classList.add('ui-disabled'); //.disabled = true;
@@ -360,20 +598,91 @@
             document.getElementById('IPSettings').classList.add('ui-disabled'); // = '#';
             document.getElementById('IPTimer').classList.add('ui-disabled'); // = '#';
             doDisconnect();
-        
+
         } else if (datain.substring(0, 2) == "NB") {
             //no bowl!
-                    //show modal
-        document.getElementById('myModal2').style.display = "block";
+            //show modal
+            document.getElementById('myModal2').style.display = "block";
+
+        } else if (datain.substring(0, 3) == "BOK") {
+            //bowl ok!
+            //show modal
+            document.getElementById('myModal3').style.display = "block";
+
+        } else if (datain.substring(0, 4) == "DONE") {
+            //cereal finished
+            //show modal
+            document.getElementById('myModal3').style.display = "none";
+
+
+
+        } else if (datain.substring(0, 3) == "HM#") {
+            //set clock timer
+            if (datain.substring(datain.lastIndexOf("#") + 1, datain.lastIndexOf(".")).length == 1) {
+                var hrs = "0" + parseInt(datain.substring(datain.lastIndexOf("#") + 1, datain.lastIndexOf(".")));
+            } else {
+                var hrs = parseInt(datain.substring(datain.lastIndexOf("#") + 1, datain.lastIndexOf(".")));
+            }
+
+            if (datain.substring(datain.indexOf(".") + 1).length == 1) {
+                var mins = "0" + parseInt(datain.substring(datain.indexOf(".") + 1));
+            } else {
+                var mins = parseInt(datain.substring(datain.indexOf(".") + 1));
+            }
+
+            var nowTime = new Date();
+            nowTime.setHours(hrs);
+            nowTime.setMinutes(mins);
+            $('#db').datebox('setTheDate', nowTime).trigger('datebox', {
+                'method': 'doset'
+            });
+            $('#db').datebox('refresh');
+
+            if (alarmOn === true) {
+                $('#btnCalc').removeClass("ui-icon-deletered").addClass("ui-icon-checkgreen");
+                $('#btnCalc').html("Alarm On");
+            } else if (alarmOn === false) {
+                $('#btnCalc').removeClass("ui-icon-checkgreen").addClass("ui-icon-deletered");
+                $('#btnCalc').html("Set Alarm");
+            }
+
+
+
+        } else if (datain.substring(0, 5) == "ASON#") {
+            //set clock timer
+            alarmOn = true;
+
+            $('#btnCalc').removeClass("ui-icon-deletered").addClass("ui-icon-checkgreen");
+            $('#btnCalc').html("Alarm On");
+
+            console.log('ESP Alarm on');
+
+        } else if (datain.substring(0, 6) == "ASOFF#") {
+            //set clock timer
+            alarmOn = false;
+
+            $('#btnCalc').removeClass("ui-icon-checkgreen").addClass("ui-icon-deletered");
+            $('#btnCalc').html("Set Alarm");
+
+            //alarm off message
+            console.log('ESP Alarm off');
+        } else if (datain.substring(0, 2) == 'K#') {
+            milkP = parseInt(datain.substring(datain.indexOf("#") + 1));
+
+            //$("#milkPortion").val(milkP).slider("refresh");
+        } else if (datain.substring(0, 2) == 'P#') {
+            cerealP = parseInt(datain.substring(datain.indexOf("#") + 1));
+            //$("#cerealPortion").val(cerealP).slider("refresh");
+        } else if (datain.substring(0, 2) == "C#") {
+            //set cereal volume
+            document.getElementById('cerealTable').innerHTML = 22 - parseInt(datain.substring(datain.indexOf("#") + 1)) + " cm";
+        } else if (datain.substring(0, 2) == "T#") {
+            //set milk temp
+            document.getElementById('milkTempTable').innerHTML = parseInt(datain.substring(datain.indexOf("#") + 1));
+        } else if (datain.substring(0, 2) == "V#") {
+            //set milk volume
+            document.getElementById('milkVolTable').innerHTML = parseInt(datain.substring(datain.indexOf("#") + 1));
         }
-
-
-        // //interprits data from sensors (H: is humidity and T: is temperature)
-        // else if (datain.includes('H:')) {
-        //     document.getElementById('humidity').innerHTML = "Humidity = " + datain.substring(datain.indexOf(":") + 1) + "%";
-        // } else if (datain.includes('T:')) {
-        //     document.getElementById('temperature').innerHTML = "Temperature = " + datain.substring(datain.indexOf(":") + 1) + "&deg";
-        // }
 
 
     }
@@ -394,7 +703,7 @@
     <!-- class="modal"> -->
     <!-- Modal content -->
     <div class="modal-content">
-        <div class="text-center"><strong id="modaltext1">Connecting</strong></div>
+        <div class="center" style="text-align: center"><strong id="modaltext1">Connecting</strong></div>
         <br>
         <br>
         <div class="loader"></div>
@@ -405,21 +714,46 @@
     <!-- class="modal"> -->
     <!-- Modal content -->
     <div class="modal-content">
-        <div class="text-center"><strong style="font-size: 150%;">No bowl!!</strong></div>
+        <div class="text-center" style="text-align: center"><strong style="font-size: 150%;">No bowl!!</strong></div>
         <br>
-        <div class="text-center"><strong>Place a bowl under the dispenser and try again.</strong></div>
+        <div class="text-center" style="text-align: center"><strong>Place a bowl under the dispenser and try again.</strong></div>
         <br>
         <br>
-                    <br>
-                    <div class="text-center">
-                    <button type="button" class="ui-button-text ui-btn ui-shadow ui-corner-all" onclick="closeNB()" style="background: #232323; border-color: #232323; font-family:'Aldrich'; font-size: 150%; color: #fff;">Ok</button>
-                    <br>
-                </div>
+        <br>
+        <div class="text-center">
+            <button type="button" class="ui-button-text ui-btn ui-shadow ui-corner-all" onclick="closeNB()" style="background: #232323; border-color: #232323; font-family:'Aldrich'; font-size: 150%; color: #fff;">Ok</button>
+            <br>
+        </div>
 
 
     </div>
 </div>
 
+<div id="myModal3" class="modal">
+    <!-- class="modal"> -->
+    <!-- Modal content -->
+    <div class="modal-content3" style="height: 300px;">
+        <div class="center" style="text-align: center"><strong id="modaltext1" style="font-size: 150%;">Making Cereal!</strong></div>
+        <br><br>
+        <div class="">
+            <div class="ui-grid-e">
+                <div class="ui-block-a" style="z-index: 8"><div><span></span></div></div>
+                <div class="ui-block-b" style="z-index: 8"><div class="fallingLeaves" style="z-index: 2" ><span style="-webkit-animation-delay: 0s; -moz-animation-delay: 0; z-index: 3; position: relative;"></span></div></div>
+                <div class="ui-block-c" style="z-index: 8"><div class="fallingLeaves" style="z-index: 4"><span style="-webkit-animation-delay: 1s; -moz-animation-delay: 1; z-index: 5; position: relative;"></span></div></div>
+                <div class="ui-block-d" style="z-index: 8"><div class="fallingLeaves" style="z-index: 6"><span style="-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4; z-index: 7; position: relative;"></span></div></div>
+                <div class="ui-block-e" style="z-index: 8"><div class="fallingLeaves" style="z-index: 8"><span style="-webkit-animation-delay: 0.7s; -moz-animation-delay: 0.7; z-index: 9; position: relative;"></span></div></div>
+                <div class="ui-block-f" style="z-index: 8"><div><span></span></div></div>
+                <!-- <div class="ui-block-g"><div><span></span></div></div> -->
+                <br><br><br><br>
+                <div style="position: relative; left: 0; top: 0;"> 
+                    <img src="img/bottom5.png" class="over" style="width: 235px; height: 131px; z-index: 100"/> 
+                    <img src="img/top5.png" class="under" style="width: 235px; height: 131px; z-index: 1"/> 
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 
@@ -428,7 +762,7 @@
     <div data-theme="c">
         <div data-role="page" id="splash">
             <div data-role="content" id="content">
-                <div class="text-center">
+                <div style="position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
                     <img src="img/RC.png" alt="image" class="modal-content" />
                 </div>
             </div>
@@ -439,7 +773,7 @@
                 <br>
                 <br>
                 <!-- <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1> -->
-                <div class="text-center">
+                <div style="text-align: center">
                     <img src="img/RC.png" alt="image" class="modal-content2" />
                 </div>
             </div>
@@ -450,8 +784,6 @@
                     <br>
                     <button type="button" id="button1" class="ui-button-text" onclick="doButton1()" style="font-family:'Aldrich'; font-size: 150%;">Dispense Cereal now</button>
                     <br>
-
-
                 </div>
 
             </div>
@@ -477,7 +809,7 @@
                 <br>
                 <br>
                 <!-- <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1> -->
-                <div class="text-center">
+                <div style="text-align: center">
                     <img src="img/RC.png" alt="image" class="modal-content2" />
                 </div>
             </div>
@@ -485,12 +817,36 @@
 
                 <br>
                 <h3 class="center">Portions of milk</h3>
-                <input type="range" min="0" max="3" id=milkPortion value="1" onchange="sendAnalog1();">
+                <input type="range" id=milkPortion value="1" min="0" max="3" onchange="sendAnalog1();">
                 <br>
                 <h3 class="center">Portions of cereal</h3>
-                <input type="range" id=cerealPortion min="0" max="3" value="1" onchange="sendAnalog1();">
+                <input type="range" id=cerealPortion value="1" min="0" max="3" onchange="sendAnalog1();">
                 <br>
                 <br>
+                <br>
+
+                <div style="position: absolute; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                    <table style="text-align: center; border-collapse: collapse; border: medium none; border: 1px solid #232323;">
+                        <div style="text-align: center">
+                            <thead>
+                                <tr>
+                                    <td style="text-align: center; background: #232323; border-color: #232323; font-family:'Aldrich'; font-size: 150%; color: #fff;">&nbsp&nbspCereal Amount&nbsp&nbsp</td>
+                                    <td style="text-align: center; background: #232323; border-color: #232323; font-family:'Aldrich'; font-size: 150%; color: #fff;">&nbsp&nbspMilk Temp&nbsp&nbsp</td>
+                                    <td style="text-align: center; background: #232323; border-color: #232323; font-family:'Aldrich'; font-size: 150%; color: #fff;">&nbsp&nbspMilk Volume&nbsp&nbsp</td>
+                                </tr>
+                            </thead>
+                        </div>
+                        <tbody>
+                            <tr>
+
+                                <td id="cerealTable" style="text-align: center"></td>
+                                <td id="milkTempTable" style="text-align: center"></td>
+                                <td id="milkVolTable" style="text-align: center"></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
             </div>
 
             <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="f1">
@@ -514,7 +870,7 @@
                 <br>
                 <br>
                 <!-- <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1> -->
-                <div class="text-center">
+                <div style="text-align: center">
                     <img src="img/RC.png" alt="image" class="modal-content2" />
                 </div>
             </div>
@@ -522,6 +878,30 @@
 
 
                 <h3 class="center">Set the time you'd like your cereal to be dispensed</h3>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+
+
+                <div style="position: absolute; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                    <div class="ui-content" role="Timer">
+                        <div class="row">
+                            <div style="width:25%">
+                                <div class="ui-field-contain">
+                                    <input class="form-control" id="db" type="text" data-role="datebox" data-options="{&quot;mode&quot;:&quot;timeflipbox&quot;,&quot;useInline&quot;:true,&quot;useInlineAlign&quot;:&quot;center&quot;, &quot;overrideTimeFormat&quot;:&quot;24&quot;, &quot;overrideTimeOutput&quot;:&quot;%H.%M&quot;}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
 
             </div>
             <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="f1">
@@ -545,7 +925,7 @@
                 <br>
                 <br>
                 <!-- <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1> -->
-                <div class="text-center">
+                <div style="text-align: center">
                     <img src="img/RC.png" alt="image" class="modal-content2" />
                 </div>
             </div>
