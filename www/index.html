@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<!--Below we define the language-->
+<html lang="en-UK">
+
+<head>
+    <meta charset="utf-8">
+
+    <!--The next three tags are needed for Jquerry mobile to work-->
+    <!--     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' type='text/css' /> -->
+
+    <!-- activate for server:-->
+
+    <!-- <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" /> -->
+
+    <!--  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script> -->
+
+    <!--     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script> 
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="http://dev.jtsage.com/DateBox/js/doc.js"></script>
+    <script type="text/javascript" src="http://cdn.jtsage.com/jtsage-datebox/4.2.3/jtsage-datebox-4.2.3.jqm.min.js"></script>
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+        <link rel="stylesheet" href="http://cdn.jtsage.com/jtsage-datebox/4.2.3/jtsage-datebox-4.2.3.jqm.min.css" />
+
+         <link rel="stylesheet" href="css/jquery.mobile.squareui.css" /> 
+    <link rel='stylesheet' href='css/bootstrap.min.css' type='text/css' /> -->
+
+
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+
+    <link rel="stylesheet" href="css/jquery.mobile.squareui.css" />
+    <link rel="stylesheet" href="css/jtsage-datebox-4.2.3.jqm.css" />
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <!--     <script type="text/javascript" src="http://dev.jtsage.com/DateBox/js/doc.js"></script> -->
+    <script type="text/javascript" src="js/jtsage-datebox-4.2.3.jqm.js"></script>
+
+    <style>
+        /* latin */
+
+        @font-face {
+            font-family: 'Aldrich';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Aldrich Regular'), local('Aldrich-Regular'), url(fonts/j-NnyokbAnhXANS2iZ6Jew.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+        }
+
+        body {
+            font-family: 'Aldrich'
+        }
+
+        h1 {
+            font-family: 'Aldrich';
+        }
+
+        h3 {
+            font-family: 'Aldrich'
+        }
+
+        #btnClose .ui-button-text {
+            padding: 0;
+        }
+
+
+        /*Red and green icons for timer*/
+
+        .ui-icon-checkgreen:after,
+        html .ui-btn.ui-checkbox-on.ui-checkbox-on:after {
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2214px%22%20height%3D%2214px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20style%3D%22fill%3A%23008000%3B%22%20points%3D%2214%2C4%2011%2C1%205.003%2C6.997%203%2C5%200%2C8%204.966%2C13%204.983%2C12.982%205%2C13%20%22%2F%3E%3C%2Fsvg%3E");
+        }
+
+        .ui-icon-deletered:after {
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2214px%22%20height%3D%2214px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20fill%3D%22%23B22222%22%20points%3D%2214%2C3%2011%2C0%207%2C4%203%2C0%200%2C3%204%2C7%200%2C11%203%2C14%207%2C10%2011%2C14%2014%2C11%2010%2C7%20%22%2F%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+        }
+
+        /* The Modal (background) */
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1001;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+
+        /* Modal Content/Box */
+
+        .modal-content {
+            background-color: #f9f9f9;
+            ;
+            margin: 50% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 160px;
+            /* Could be more or less, depending on screen size */
+        }
+
+        .modal-content2 {
+            background-color: #f9f9f9;
+            /*          margin: 50% auto;
+             15% from the top and centered 
+            padding: 20px;*/
+            /*border: 1px solid #888;*/
+            width: 160px;
+            /* Could be more or less, depending on screen size */
+        }        
+        .modal-content3 {
+            background-color: #f9f9f9;
+            margin: 50% auto; 
+            padding: 20px;
+            /*border: 1px solid #888;*/
+            width: 240px;
+            /* Could be more or less, depending on screen size */
+        }
+
+        .loader {
+            border: 16px solid #d3d3d3;
+            /* Light grey */
+            border-top: 16px solid #383838;
+            /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .under
+        {
+            position:relative;
+            left:0px;
+            top:-136px;
+        }
+        .over
+        {
+            position:relative;
+            left:0px;
+            top:0px;
+        }
+
+        #content {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        /*falling cereal!*/
+
+        .fallingLeaves {
+            z-index: 10
+            /*text-align: center;*/
+        }
+
+        .fallingLeaves span {
+            display: inline-block;
+            width: 41px;
+            height: 21px;
+            /*margin: -28px 40px 54px -3px;*/
+            background: url("img/cereal3.png");
+            z-index: 10
+
+            -webkit-animation: fallingLeavesw 3s infinite linear;
+            -moz-animation: fallingLeavesm 3s infinite linear;
+            -o-animation: fallingLeaveso 3s infinite linear;
+            animation: fallingLeaves 3s infinite linear;
+        }
+
+        @-webkit-keyframes fallingLeavesw {
+            0% {
+                opacity: 1;
+
+                -webkit-transform: translate(0, 0px) rotateZ(0deg);
+            }
+            75% {
+                opacity: 1;
+
+                -webkit-transform: translate(0px, 800px) rotateZ(270deg);
+            }
+            100% {
+                opacity: 0;
+
+                -webkit-transform: translate(0px, 130px) rotateZ(360deg);
+            }
+        }
+
+        @-moz-keyframes fallingLeavesm {
+            0% {
+                opacity: 1;
+
+                -moz-transform: translate(0, 0px) rotateZ(0deg);
+            }
+            75% {
+                opacity: 1;
+
+                -moz-transform: translate(0px, 80px) rotateZ(270deg);
+            }
+            100% {
+                opacity: 0;
+
+                -moz-transform: translate(0px, 130px) rotateZ(360deg);
+            }
+        }
+        @-o-keyframes fallingLeaveso {
+            0% {
+                opacity: 1;
+
+                -o-transform: translate(0, 0px) rotateZ(0deg);
+            }
+            75% {
+                opacity: 1;
+
+                -o-transform: translate(0px, 80px) rotateZ(270deg);
+            }
+            100% {
+                opacity: 0;
+
+                -o-transform: translate(0px, 130px) rotateZ(360deg);
+            }
+        }
+        @keyframes fallingLeaves {
+            0% {
+                opacity: 1;
+
+                transform: translate(0, 0px) rotateZ(0deg);
+            }
+            75% {
+                opacity: 1;
+
+                transform: translate(0px, 80px) rotateZ(270deg);
+            }
+            100% {
+                opacity: 0;
+
+                transform: translate(0px, 130px) rotateZ(360deg);
+            }
+        }
+
+        /* ADD 6(e) and 7(f) column grid */
+        .ui-grid-e, .ui-grid-f { overflow: hidden; }
+
+        /* grid e: 16/16/16/16/16/16 */
+        .ui-grid-e .ui-block-a, .ui-grid-e .ui-block-b, .ui-grid-e .ui-block-c, .ui-grid-e .ui-block-d, .ui-grid-e .ui-block-e, .ui-grid-e .ui-block-f { width: 16.59166666666667%; }
+        .ui-grid-e > :nth-child(n) { width: 16.66666666666667%; }
+        .ui-grid-e .ui-block-a { clear: left; }
+
+        /* grid f: 14/14/14/14/14 */
+        .ui-grid-f .ui-block-a, .ui-grid-f .ui-block-b, .ui-grid-f .ui-block-c, .ui-grid-f .ui-block-d, .ui-grid-f .ui-block-e, .ui-grid-f .ui-block-f, .ui-grid-f .ui-block-g { width: 14.21071428571429%; }
+        .ui-grid-f > :nth-child(n) { width: 14.28571428571429%; }
+        .ui-grid-f .ui-block-a { clear: left; }
+
+        /* ADD 6th (f) and 7th (g) blocks in grid */
+        .ui-header .ui-navbar .ui-grid-e li.ui-block-f .ui-btn,
+        .ui-footer .ui-navbar .ui-grid-e li.ui-block-f .ui-btn { margin-right: -3px; }/* NOT TESTED */
+
+        .ui-header .ui-navbar .ui-grid-f li.ui-block-g .ui-btn,
+        .ui-footer .ui-navbar .ui-grid-f li.ui-block-g .ui-btn { margin-right: -2px; }/* NOT TESTED */
+
+        .ui-grid-e .ui-btn, .ui-grid-f .ui-btn { margin-right: 5px; margin-left: 5px; }
+
+        .ui-block-f, .ui-block-g { margin: 0; padding: 0; border: 0; float: left; min-height: 1px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+
+        .ui-header .ui-navbar .ui-grid-e li.ui-block-f .ui-btn-icon-right .ui-icon,
+        .ui-footer .ui-navbar .ui-grid-f li.ui-block-g .ui-btn-icon-right .ui-icon { right: 8px; }
+    </style>
+
+    <!-- Here is the title-->
+    <title>RoboCereal</title>
+</head>
+
+<script>
+    var wsUri;
+    var startlogin;
+    var connectBut;
+    var disconnectBut;
+    var sendMessage;
+    var sendBut;
+    var clearLogBut;
+    var getConnect;
+    var timeout;
+    var timeout2;
+    var milkP;
+    var cerealP;
+    var alarmHrsMins;
+    var alarmOn;
+
+    jQuery.extend(jQuery.mobile, {
+        ajaxEnabled: false
+    });
+
+    function echoHandlePageLoad() {
+        //default to homepage
+        window.location.hash = '#splash';
+        //timeout after 15 seconds
+        timeout = setTimeout(function() {
+            start();
+        }, 3000);
+    }
+
+    function start() {
+
+        window.location.hash = '#Home';
+
+        //disable navbar - assume they arent going to connect
+        document.getElementById('IPHome').classList.add('ui-disabled'); // = '#';
+        document.getElementById('IPSettings').classList.add('ui-disabled'); // = '#';
+        document.getElementById('IPTimer').classList.add('ui-disabled'); // = '#';
+
+        wsUri = document.getElementById('wsUri');
+        var wsUriStart = localStorage.getItem('wsUrix');
+        wsUri.value = wsUriStart;
+
+        //wsUri.value = 'ws://192.168.1.67:301/';//'ws://echo.websocket.org';
+
+        //get password from storage if possible
+        var passwordstart = localStorage.getItem('passwordx');
+        document.getElementById('password').value = passwordstart;
+
+        if (wsUri != "" && passwordstart != "") {
+            startlogin = "1";
+            doConnect();
+        } else {
+            alarmOn = false;
+            startlogin = "0";
+            $(':mobile-pagecontainer').pagecontainer('change', '#IP', {
+                transition: "none"
+            });
+        }
+    }
+
+    function testConnection() {
+        if (websocket.readyState === websocket.CLOSED) {
+            doConnect();
+        } else {
+            //get sensor values? no need already sent from ESP
+        }
+    }
+
+    //connection function
+    function doConnect() {
+
+        localStorage.setItem('passwordx', document.getElementById('password').value);
+        localStorage.setItem('wsUrix', wsUri.value);
+
+        if (wsUri.value.substring(0, 6) !== 'wss://' || wsUri.value.substring(0, 5) !== 'ws://') {
+            var uri = 'ws://' + wsUri.value; // delete the 2nd 's' from this!
+        } else {
+            var uri = wsUri.value;
+        }
+        //now make sure the port is added!
+
+        //var uri = 'wss://' + wsUri.value; // delete the 2nd 's' from this!
+
+        //show modal
+        document.getElementById('myModal1').style.display = "block";
+
+        //timeout after 15 seconds
+        timeout = setTimeout(function() {
+            if (websocket.readyState != WebSocket.OPEN) {
+                websocket.close();
+            };
+        }, 15000);
+
+        timeout = setTimeout(function() {
+            document.getElementById('modaltext1').innerHTML = 'Connection failed';
+            timeout2 = setTimeout(function() {
+                document.getElementById('myModal1').style.display = "none";
+                document.getElementById('connect').innerHTML = 'Connect';
+                document.getElementById('connect').setAttribute("onClick", "doConnect()");
+                document.getElementById('modaltext1').innerHTML = 'Connecting';
+                startlogin = "0";
+                $(':mobile-pagecontainer').pagecontainer('change', '#IP', {
+                    transition: "none"
+                });
+            }, 2000);
+        }, 15000);
+
+        websocket = new WebSocket(uri);
+        websocket.onopen = function(evt) {
+            onOpen(evt)
+            clearTimeout(timeout2);
+            clearTimeout(timeout);
+            if (getConnect) {} else {
+                getConnect = setInterval(testConnection, 3000);
+            }
+        };
+        websocket.onclose = function(evt) {
+            onClose(evt)
+        };
+        websocket.onmessage = function(evt) {
+            onMessage(evt)
+        };
+        websocket.onerror = function(evt) {
+            onError(evt)
+        };
+    }
+
+
+    //disconnection function
+    function doDisconnect() {
+        wsUri.classList.remove("ui-disabled"); //disabled = false;
+        document.getElementById('password').classList.remove("ui-disabled"); //.disabled = false;
+        clearInterval(getConnect);
+        getConnect = null;
+        websocket.close();
+        document.getElementById('connect').innerHTML = 'Connect';
+        document.getElementById('connect').setAttribute("onClick", "doConnect()");
+
+        //force navbar to ip only
+        document.getElementById('IPHome').classList.add('ui-disabled'); // = '#';
+        document.getElementById('IPSettings').classList.add('ui-disabled'); // = '#';
+        document.getElementById('IPTimer').classList.add('ui-disabled'); // = '#';
+    }
+
+    //button 1
+    function doButton1() {
+        if (websocket.readyState === websocket.CLOSED) {
+            doConnect();
+        }
+        websocket.send("MC");
+        //put in "no connection!" code
+    }
+
+    function doButton2(){
+        document.getElementById('myModal3').style.display = "block";
+        setTimeout(function(){ document.getElementById('myModal3').style.display = "none"; }, 10000);
+        //setTimeout(function(){document.getElementById('myModal3').style.display = "none";}4000);
+    }
+
+    //send cereal and milk portion choice to esp8266
+    function sendAnalog1() {
+        if (typeof websocket === "undefined") {
+            return;
+        }
+        if (websocket.readyState === websocket.CLOSED) {
+            doConnect();
+        }
+        var m = parseInt(document.getElementById('milkPortion').value).toString();
+        var c = parseInt(document.getElementById('cerealPortion').value).toString();
+        //document.getElementById('analog1val').innerHTML = r;
+        console.log('MilkCereal: ' + m + ' ' + c);
+        websocket.send('MC#' + m + '.' + c);
+    }
+
+    $(document).on('click', '#btnCalc', function() {
+        if (websocket.readyState === websocket.CLOSED) {
+            doConnect();
+        }
+
+        if (alarmOn === false) {
+            var wholeDate = $("#db").datebox('getTheDate');
+            alarmHrsMins = $('#db').datebox('callFormat', 'HM#%H.%M', wholeDate);
+            console.log('Timeset: ' + alarmHrsMins);
+            websocket.send(alarmHrsMins);
+            console.log('Alarm on');
+        } else if (alarmOn === true) {
+            console.log('Alarm off');
+            websocket.send('AO#');
+        }
+
+    });
+
+    //websocket started
+    function onOpen(evt) {
+        console.log('CONNECTED');
+        var pass = 'PW#' + document.getElementById('password').value;
+        websocket.send(pass);
+
+        //activate timer controls
+        $('#db').bind('datebox', function(e, passed) {
+            if (passed.method === 'offset') {
+                $('#btnCalc').removeClass("ui-icon-checkgreen").addClass("ui-icon-deletered");
+                $('#btnCalc').html("Set Alarm");
+
+                //alarm off message
+                console.log('Alarm off');
+                websocket.send('AO#');
+            }
+        });
+
+    }
+
+    //websocket closed
+    function onClose(evt) {
+        console.log('DISCONNECTED');
+        console.log(evt);
+        clearInterval(getConnect);
+        wsUri.classList.remove("ui-disabled"); //.disabled = false;
+        document.getElementById('password').classList.remove("ui-disabled"); //.disabled = false;
+    }
+
+    function savePass() {
+        localStorage.setItem('passwordx', document.getElementById('password').value);
+    }
+
+    function closeNB() {
+        document.getElementById('myModal2').style.display = "none";
+    }
+
+    $(document).on("pagecontainerbeforeshow", function(event, ui) {
+        if (ui.toPage.prop("id") === "Settings") {
+            $("#cerealPortion").val(cerealP).slider("refresh");
+            $("#milkPortion").val(milkP).slider("refresh");
+        }
+    });
+
+    // $(document).on('pagechange', '#Settings', function() {
+    //     //alert(cerealP + " " + milkP);
+    //     //milkP = 2;
+    //     //cerealP = 3;
+    //     if (cerealP && milkP){
+    //         $("#cerealPortion").val(cerealP).slider("refresh");
+    //         $("#milkPortion").val(milkP).slider("refresh");
+    //     }
+
+    // });
+
+    //handle connection modals - this code is awful but it works!
+    function modalDelay(time1, time2, modalhtml1, modalhtml2, buttonfunc, startpage) {
+        setTimeout(function() {
+            document.getElementById('modaltext1').innerHTML = modalhtml1;
+            setTimeout(function() {
+                document.getElementById('myModal1').style.display = "none";
+                document.getElementById('connect').innerHTML = modalhtml2;
+                document.getElementById('connect').setAttribute("onClick", buttonfunc);
+                document.getElementById('modaltext1').innerHTML = 'Connecting';
+                startlogin = "0";
+                $(':mobile-pagecontainer').pagecontainer('change', startpage, {
+                    transition: "none"
+                });
+            }, time2);
+        }, time1);
+    }
+
+    //message recieved
+    function onMessage(evt) {
+
+        var datain = String(evt.data);
+        console.log(datain);
+
+        //interprits password response
+        if (datain.substring(0, 3) == "P#G" || datain.substring(0, 3) == "[ob") { //'[ob') { //"P#G") {
+            if (startlogin == 1) {
+                modalDelay(2000, 2000, 'Connection successful!', 'Disconnect', "doDisconnect()", '#Home');
+            } else {
+                var activepage = '#' + $.mobile.activePage.attr("id");
+                modalDelay(2000, 2000, 'Connection successful!', 'Disconnect', "doDisconnect()", activepage);
+            }
+            wsUri.classList.add('ui-disabled'); //.disabled = true;
+            document.getElementById('password').classList.add('ui-disabled'); //.disabled = true;
+            document.getElementById('IPHome').classList.remove("ui-disabled"); // = '#Home';
+            document.getElementById('IPSettings').classList.remove("ui-disabled"); // = '#Settings';
+            document.getElementById('IPTimer').classList.remove("ui-disabled"); // = '#Timer';
+
+
+        } else if (datain.substring(0, 3) == "P#B") {
+            websocket.close();
+            modalDelay(2000, 2000, 'Incorrect Password', 'Connect', "doConnect()", '#IP');
+            //force navbar to ip only
+            document.getElementById('IPHome').classList.add('ui-disabled'); // = '#';
+            document.getElementById('IPSettings').classList.add('ui-disabled'); // = '#';
+            document.getElementById('IPTimer').classList.add('ui-disabled'); // = '#';
+            doDisconnect();
+
+        } else if (datain.substring(0, 2) == "NB") {
+            //no bowl!
+            //show modal
+            document.getElementById('myModal2').style.display = "block";
+
+        } else if (datain.substring(0, 3) == "BOK") {
+            //bowl ok!
+            //show modal
+            document.getElementById('myModal3').style.display = "block";
+
+        } else if (datain.substring(0, 4) == "DONE") {
+            //cereal finished
+            //show modal
+            document.getElementById('myModal3').style.display = "none";
+
+
+
+        } else if (datain.substring(0, 3) == "HM#") {
+            //set clock timer
+            if (datain.substring(datain.lastIndexOf("#") + 1, datain.lastIndexOf(".")).length == 1) {
+                var hrs = "0" + parseInt(datain.substring(datain.lastIndexOf("#") + 1, datain.lastIndexOf(".")));
+            } else {
+                var hrs = parseInt(datain.substring(datain.lastIndexOf("#") + 1, datain.lastIndexOf(".")));
+            }
+
+            if (datain.substring(datain.indexOf(".") + 1).length == 1) {
+                var mins = "0" + parseInt(datain.substring(datain.indexOf(".") + 1));
+            } else {
+                var mins = parseInt(datain.substring(datain.indexOf(".") + 1));
+            }
+
+            var nowTime = new Date();
+            nowTime.setHours(hrs);
+            nowTime.setMinutes(mins);
+            $('#db').datebox('setTheDate', nowTime).trigger('datebox', {
+                'method': 'doset'
+            });
+            $('#db').datebox('refresh');
+
+            if (alarmOn === true) {
+                $('#btnCalc').removeClass("ui-icon-deletered").addClass("ui-icon-checkgreen");
+                $('#btnCalc').html("Alarm On");
+            } else if (alarmOn === false) {
+                $('#btnCalc').removeClass("ui-icon-checkgreen").addClass("ui-icon-deletered");
+                $('#btnCalc').html("Set Alarm");
+            }
+
+
+
+        } else if (datain.substring(0, 5) == "ASON#") {
+            //set clock timer
+            alarmOn = true;
+
+            $('#btnCalc').removeClass("ui-icon-deletered").addClass("ui-icon-checkgreen");
+            $('#btnCalc').html("Alarm On");
+
+            console.log('ESP Alarm on');
+
+        } else if (datain.substring(0, 6) == "ASOFF#") {
+            //set clock timer
+            alarmOn = false;
+
+            $('#btnCalc').removeClass("ui-icon-checkgreen").addClass("ui-icon-deletered");
+            $('#btnCalc').html("Set Alarm");
+
+            //alarm off message
+            console.log('ESP Alarm off');
+        } else if (datain.substring(0, 2) == 'K#') {
+            milkP = parseInt(datain.substring(datain.indexOf("#") + 1));
+
+            //$("#milkPortion").val(milkP).slider("refresh");
+        } else if (datain.substring(0, 2) == 'P#') {
+            cerealP = parseInt(datain.substring(datain.indexOf("#") + 1));
+            //$("#cerealPortion").val(cerealP).slider("refresh");
+        } else if (datain.substring(0, 2) == "C#") {
+            //set cereal volume
+            if (parseInt(datain.substring(datain.indexOf("#") + 1)) >= 21) {
+
+                document.getElementById('cerealTable').innerHTML = "0 cm";
+            }else{
+            document.getElementById('cerealTable').innerHTML = 21 - parseInt(datain.substring(datain.indexOf("#") + 1)) + " cm";
+        }
+        } else if (datain.substring(0, 2) == "T#") {
+            //set milk temp
+            document.getElementById('milkTempTable').innerHTML = parseInt(datain.substring(datain.indexOf("#") + 1));
+        } else if (datain.substring(0, 2) == "V#") {
+            //set milk volume
+            document.getElementById('milkVolTable').innerHTML = parseInt(datain.substring(datain.indexOf("#") + 1));
+        }
+
+
+    }
+
+    //error recieved
+    function onError(evt) {
+        //special error handling here?
+        //console.log(evt)
+    }
+
+    window.addEventListener('load', echoHandlePageLoad, false);
+</script>
+
+
+<!--HOME PAGE CODE-->
+<!-- The Modal -->
+<div id="myModal1" class="modal">
+    <!-- class="modal"> -->
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="center" style="text-align: center"><strong id="modaltext1">Connecting</strong></div>
+        <br>
+        <br>
+        <div class="loader"></div>
+    </div>
+</div>
+
+<div id="myModal2" class="modal">
+    <!-- class="modal"> -->
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="text-center" style="text-align: center"><strong style="font-size: 150%;">No bowl!!</strong></div>
+        <br>
+        <div class="text-center" style="text-align: center"><strong>Place a bowl under the dispenser and try again.</strong></div>
+        <br>
+        <br>
+        <br>
+        <div class="text-center">
+            <button type="button" class="ui-button-text ui-btn ui-shadow ui-corner-all" onclick="closeNB()" style="background: #232323; border-color: #232323; font-family:'Aldrich'; font-size: 150%; color: #fff;">Ok</button>
+            <br>
+        </div>
+
+
+    </div>
+</div>
+
+<div id="myModal3" class="modal">
+    <!-- class="modal"> -->
+    <!-- Modal content -->
+    <div class="modal-content3" style="height: 300px;">
+        <div class="center" style="text-align: center"><strong id="modaltext1" style="font-size: 150%;">Making Cereal!</strong></div>
+        <br><br>
+        <div class="">
+            <div class="ui-grid-e">
+                <div class="ui-block-a" style="z-index: 8"><div><span></span></div></div>
+                <div class="ui-block-b" style="z-index: 8"><div class="fallingLeaves" style="z-index: 2" ><span style="-webkit-animation-delay: 0s; -moz-animation-delay: 0; z-index: 3; position: relative;"></span></div></div>
+                <div class="ui-block-c" style="z-index: 8"><div class="fallingLeaves" style="z-index: 4"><span style="-webkit-animation-delay: 1s; -moz-animation-delay: 1; z-index: 5; position: relative;"></span></div></div>
+                <div class="ui-block-d" style="z-index: 8"><div class="fallingLeaves" style="z-index: 6"><span style="-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4; z-index: 7; position: relative;"></span></div></div>
+                <div class="ui-block-e" style="z-index: 8"><div class="fallingLeaves" style="z-index: 8"><span style="-webkit-animation-delay: 0.7s; -moz-animation-delay: 0.7; z-index: 9; position: relative;"></span></div></div>
+                <div class="ui-block-f" style="z-index: 8"><div><span></span></div></div>
+                <!-- <div class="ui-block-g"><div><span></span></div></div> -->
+                <br><br><br><br>
+                <div style="position: relative; left: 0; top: 0;"> 
+                    <img src="img/bottom5.png" class="over" style="width: 235px; height: 131px; z-index: 100"/> 
+                    <img src="img/top5.png" class="under" style="width: 235px; height: 131px; z-index: 1"/> 
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<body style="background-color: #f9f9f9;">
+    <div data-theme="c">
+        <div data-role="page" id="splash">
+            <div data-role="content" id="content">
+                <div style="position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                    <img src="img/RC.png" alt="image" class="modal-content" />
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="Home">
+            <div data-role="header" data-id="persistent" data-position="fixed" style="overflow:hidden; background-color: #f9f9f9; border: 5px;">
+                <br>
+                <br>
+                <!-- <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1> -->
+                <div style="text-align: center">
+                    <img src="img/RC.png" alt="image" class="modal-content2" />
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div class="center">
+                    <br>
+                    <br>
+                    <br>
+                    <button type="button" id="button1" class="ui-button-text" onclick="doButton1()" style="font-family:'Aldrich'; font-size: 150%;">Dispense Cereal now</button>
+                    <br>
+                </div>
+
+            </div>
+            <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="f1">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Home" data-icon="home" data-role="tab" class="ui-btn-active ui-state-persist" data-transition="none"></a></li>
+                        <li><a href="#Settings" data-icon="gear" data-role="tab" data-transition="none"></a></li>
+                        <li><a href="#Timer" data-icon="clock" data-role="tab" data-transition="none"></a></li>
+                        <li><a href="#IP" data-icon="cloud" data-role="tab" data-transition="none"></a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--SETTINGS PAGE-->
+        <div data-role="page" id="Settings">
+            <div data-role="header" data-id="persistent" data-position="fixed" style="overflow:hidden; background-color: #f9f9f9; border: 5px;">
+                <br>
+                <br>
+                <!-- <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1> -->
+                <div style="text-align: center">
+                    <img src="img/RC.png" alt="image" class="modal-content2" />
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+
+                <br>
+                <h3 class="center">Portions of cereal</h3>
+                <input type="range" id=milkPortion value="1" min="0" max="3" onchange="sendAnalog1();">
+                <br>
+                <h3 class="center">Portions of milk</h3>
+                <input type="range" id=cerealPortion value="1" min="0" max="3" onchange="sendAnalog1();">
+                <br>
+                <br>
+                <br>
+
+                <div style="position: absolute; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                    <table style="text-align: center; border-collapse: collapse; border: medium none; border: 1px solid #232323;">
+                        <div style="text-align: center">
+                            <thead>
+                                <tr>
+                                    <td style="text-align: center; background: #232323; border-color: #232323; font-family:'Aldrich'; font-size: 150%; color: #fff;">&nbsp&nbspCereal Amount&nbsp&nbsp</td>
+                                    <td style="text-align: center; background: #232323; border-color: #232323; font-family:'Aldrich'; font-size: 150%; color: #fff;">&nbsp&nbspMilk Temp&nbsp&nbsp</td>
+                                    <td style="text-align: center; background: #232323; border-color: #232323; font-family:'Aldrich'; font-size: 150%; color: #fff;">&nbsp&nbspMilk Volume&nbsp&nbsp</td>
+                                </tr>
+                            </thead>
+                        </div>
+                        <tbody>
+                            <tr>
+
+                                <td id="cerealTable" style="text-align: center"></td>
+                                <td id="milkTempTable" style="text-align: center"></td>
+                                <td id="milkVolTable" style="text-align: center"></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+            <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="f1">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Home" data-icon="home" data-role="tab" data-transition="none"></a></li>
+                        <li><a href="#Settings" data-icon="gear" data-role="tab" class="ui-btn-active ui-state-persist" data-transition="none"></a></li>
+                        <li><a href="#Timer" data-icon="clock" data-role="tab" data-transition="none"></a></li>
+                        <li><a href="#IP" data-icon="cloud" data-role="tab" data-transition="none"></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!--TIMER PAGE-->
+        <div data-role="page" id="Timer">
+            <div data-role="header" data-id="persistent" data-position="fixed" style="overflow:hidden; background-color: #f9f9f9; border: 5px;">
+                <br>
+                <br>
+                <!-- <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1> -->
+                <div style="text-align: center">
+                    <img src="img/RC.png" alt="image" class="modal-content2" />
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+
+
+                <h3 class="center">Set the time you'd like your cereal to be dispensed</h3>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+
+
+                <div style="position: absolute; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                    <div class="ui-content" role="Timer">
+                        <div class="row">
+                            <div style="width:25%">
+                                <div class="ui-field-contain">
+                                    <input class="form-control" id="db" type="text" data-role="datebox" data-options="{&quot;mode&quot;:&quot;timeflipbox&quot;,&quot;useInline&quot;:true,&quot;useInlineAlign&quot;:&quot;center&quot;, &quot;overrideTimeFormat&quot;:&quot;24&quot;, &quot;overrideTimeOutput&quot;:&quot;%H.%M&quot;}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="f1">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Home" data-icon="home" data-transition="none"></a></li>
+                        <li><a href="#Settings" data-icon="gear" data-transition="none"></a></li>
+                        <li><a href="#Timer" data-icon="clock" class="ui-btn-active ui-state-persist" data-transition="none"></a></li>
+                        <li><a href="#IP" data-icon="cloud" data-transition="none"></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--IP-->
+
+        <div data-role="page" id="IP">
+            <div data-role="header" data-id="persistent" data-position="fixed" style="overflow:hidden; background-color: #f9f9f9; border: 5px;">
+                <br>
+                <br>
+                <!-- <h1 Title="The worlds first automatic cereal dispeser" class="center">RoboCereal</h1> -->
+                <div style="text-align: center">
+                    <img src="img/RC.png" alt="image" class="modal-content2" />
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+
+                <h3 class="center">Set your IP details</h3>
+                <form class="center">
+                    IP:<br>
+                    <input type="text" id="wsUri"> Password:
+
+                    <br>
+                    <input type="text" id="password" onblur="savePass()">
+
+                    <!-- connect button is dynamic -->
+                    <button type="button" id="connect" class="btn btn-primary" onclick="doConnect()" style="font-family:'Aldrich'; font-size: 150%;">Connect</button>
+
+                </form>
+
+
+            </div>
+            <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="f1">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a id='IPHome' href="#Home" data-icon="home" class="ui-disabled" data-transition="none"></a></li>
+                        <li><a id='IPSettings' href="#Settings" data-icon="gear" class="ui-disabled" data-transition="none"></a></li>
+                        <li><a id='IPTimer' href="#Timer" data-icon="clock" class="ui-disabled" data-transition="none"></a></li>
+                        <li><a href="#IP" data-icon="cloud" class="ui-btn-active ui-state-persist" data-transition="none"></a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
